@@ -216,6 +216,16 @@
 <div id='id-section1'/>
 ### Page 1: 2016-07-08.  test
 
+'''
+![](url)
+'''
+![]()
+
+'''R
+
+x <- 7 + 2
+
+'''
 
 ------
 <div id='id-section2'/>
