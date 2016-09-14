@@ -219,11 +219,12 @@
 ```
 ![](url)
 ```
-![]()
+![](http://www.wesspur.com/images/stephan/tree-care.jpg)
 
 ```R
 
 x <- 7 + 2
+print(x)
 
 ```
 
