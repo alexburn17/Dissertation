@@ -1,12 +1,12 @@
-#Species responses to climate change project
+#Interactions between Microsporidian Parasites and RNA Viruses in Bumble Bees
 
-### Author: ANTdrew D. Nguyen     
-###Affiliation     
+### Author: P. Alexander Burnham   
+###University of Veromont     
 
 ## Projects title/descriptions
 
-## Date started:
-## Date end:
+## Date started: 1, June 2015
+## Date end: Current 
 
 
 # Table of contents (for 200 entries)    
