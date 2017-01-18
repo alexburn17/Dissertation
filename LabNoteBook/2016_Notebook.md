@@ -1,6 +1,6 @@
-#Species responses to climate change project
+#Coinfection of Pathogens in Bombus spp.
 
-### Author: ANTdrew D. Nguyen     
+### Author: P. Alexander Burnham 
 ###Affiliation     
 
 ## Projects title/descriptions
