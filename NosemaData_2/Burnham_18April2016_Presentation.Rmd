@@ -1,0 +1,292 @@
+---
+title: "Nosema at Large!"
+author: "P. Alexander Burnham"
+date: "April 18, 2016"
+output:
+  beamer_presentation:
+    fonttheme: professionalfonts
+    theme: Antibes
+  ioslides_presentation: default
+---
+
+## Nosema at Large!
+
+A survey of the microsporidian parasite Nosema in Northern Vermont’s bumblebees 
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/intro_zpspcd7bjk1.jpg)
+
+
+## My Esteemed Colleague
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/IMG_2201_zpsmjioxuh9.jpg)
+
+## Why are we interested in bees?
+
+
+* Pollinators are responsible for between $235-577 billion (estimated) in agricultural revinue world wide.
+
+* Around 30% of all food and 75% of the words most important food stuffs require animal-mediated pollination 
+
+* The majority of these services are provided by bees
+
+* Pollination services provided by honeybees are responsible for $14 billion (USD) annually in US commercial agriculture.
+
+## Commercial Almond Pollination
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/HONEY-BEE-POLLINATION-MORE-EFFECTIVE-IN-PRESENCE-OF-OTHER-BEES-2_zpsd143zlqe.jpg)
+
+## We know our bees are in decline.
+
+* Honeybee overwintering losses are higher (40% losses on average)
+
+* Colonoy Collapse Dissorder (CCD)
+
+* Introduction of parasites and pathogens that were not problematic before
+
+## Native pollinators, like bumblebees, are very important too.
+
+* Bumblebees are capable of buzz pollination
+      + Tomatoes
+      + Squash
+      + Blueberries
+* Important to native angiosperms 
+* Relitive to honeybees, bumblebees are understudied
+
+## Bumblebees are in decline as well.
+
+* There has been a decrease in abundance since the 1960s:
+      + _B. affinis_
+      + _B. borealis_
+      + _B. ashtoni_
+      + _B. fervidus_ 
+      + _B. pensylvanicus_ 
+      + _B. sandersoni_
+* In 2015, three bumblebees were listed in Vermont
+      + _B. affinis_ (Endangered)
+      + _B. ashtoni_ (Endangered)
+      + _B. terricola_ (Threatened)
+      
+## _Bombus affinis_
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/7742237918_fb41605a9f_zpsa4fkeaq1.jpg)
+
+##  What is wrong with our Bumblebees?
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/CE_zpsoogx2qx0.png)
+
+## What is wrong with our Bumblebees?
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/CE2_zpshoaqihvq.png)
+
+
+## _Nosema spp._
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/d91f42d2-d6e9-49c2-9383-6e5a0a2127ce_Picture2_490x330_zpssdx7mv2m.jpg)
+
+## Nosema
+
+* Nosema is a microsporidian 
+
+* Fecal/Oral Transmission
+
+* Lives in the ventriculus of the bee
+
+* There are two species that affect bumblebees
+      + _N. bombi_
+      + _N. ceranae_
+
+
+## What does it do to the bees it infects?
+
+* Decreased foraging effciency 
+
+* Dysentery in heavily infected bees 
+
+* And death if the infection reaches high levels before natural death
+
+## What did I want to find out?
+
+* This is an understudied disease system in bumblebees.
+
+* How prevalent is this parasite?
+
+* Does it have any preferences in who it infects?
+
+* What is the dynamic of this disease system on a large scale?
+
+## Hypotheses:
+
+* H1:     Species that build larger colonies will have a higher probability of infection than those that build smaller.
+
+* H2:     Workers will have a higher probability of infection than other castes.
+
+* H3:     Bumblebee colonies adjacent to honeybee apiaries will have a higher probability of infection. 
+
+## Methods:
+
+
+![alt text](http://www.hdwallpapers.in/walls/bumblebee_transformers_dark_of_the_moon-wide.jpg)
+
+
+## 2014 _Bombus_ Survey
+
+* In 2014 we conducted a bumblebee survey in Northern Vermont.
+
+* We collected over 300 specimines 
+      + all three castes
+      + random sampling 
+      + 8 different species
+      
+* Vegatation and bee abundance surveys at each site
+
+* Collected from Honeybee yards as well as sites with few honeybees
+
+
+## Distribution of Sites: GIS work by S. Alger
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Field_sites_zpstxhi4rop.jpg)
+
+## Nosema Counts:
+
+* The bees were disected (ventriculus removed)
+
+* Homogenized in 500uL of GITC buffer
+
+* Counts were made for each bee using a hemocytometer. 
+
+## Hemocytometer:
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Screen%20Shot%202016-01-25%20at%209.44.00%20AM_zpslhv2q80b.png)
+
+
+
+## Results
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Hist_zpshduihkhz.jpeg)
+
+## Probability of Infection by Site  (p>0.05)
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Site_zpsvt8oi8bk.jpeg)
+
+## Probability of Infection by Species  (p>0.05)
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Species_zpsf6avfkk9.jpeg)
+
+## Probability of Infection by Caste  (p>0.05)
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Caste_zpsclvwpwzs.jpeg)
+
+## Probability of Infection by Honeybee Prevalence  (p>0.05)
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Rplot_zpsgap53tde.jpeg)
+
+
+## How does this disease system work?
+
+###Modeling the System
+
+## Bombus life history:
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Caste%20Comp_zpsvxcwnhna.png)
+
+
+## The Model
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/CE10_zpstajjl7j3.png)
+
+
+## Differential Equations for Nosema Model MKII 
+
+$$ \frac{dS}{dt} = {-S}{P}{}{\beta} - {S}{\mu_A} $$
+$$ \frac{dI_1}{dt} = {S}{P}{\beta} - {I_1}{\mu_A} - {I_1}{\gamma} $$
+$$ \frac{dI_2}{dt} = {I_1}{P}{\gamma} - {I_2}{\mu_B} $$
+$$ \frac{dP}{dt} = {I_1}{\alpha_1}+ {I_2}{\alpha_2} - {P}{\theta} $$
+
+## What is the purpose of this Model?
+
+* It is not an exact representation of the system but...
+
+* It helps us to better understand the players involved and the dynamics betwen them within the system
+
+* helps us to discover what are the right questions to be asking
+
+## Gamma = 0.05, Beta = 0.202, I1 = 0.05 
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Rplot01_zpsyjhcarvd.jpeg)
+
+
+## Gamma = 0.05, Beta = 0.202, I1 = 0.005 
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/I1%20downn_zpsnujdnl3l.jpeg)
+
+## Gamma = 0.05, Beta = 0.202, I1 = 0.20 
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/I1%20up_zpsnabbukok.jpeg)
+
+## Gamma = 0.05, Beta = 0.202, I1 = 0.05 
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Rplot01_zpsyjhcarvd.jpeg)
+
+## Gamma = 0.03, Beta = 0.202, I1 = 0.05 
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Gamma%20down_zpsqfvswp3k.jpeg)
+
+## Gamma = 0.10, Beta = 0.202, I1 = 0.05 
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/Gamma%20up_zpsozjc2sow.jpeg)
+
+
+## To Summerize
+
+* H1:     Species that build larger colonies will have a higher probability of infection than those that build smaller. __(NO)__
+
+* H2:     Workers will have a higher probability of infection than other castes. __(NO)__
+
+* H3:     Bumblebee colonies adjacent to honeybee apiaries will have a higher probability of infection. __(NO)__
+
+## How can we interpret this?
+
+* Nosema is ubiquitous in Vermont bumblebee populations now
+
+* This could indicate a higher likelihood of coinfection wit other pathogens
+
+* The model helps us to understand this dynamic system and showes us the question we should be asking 
+
+## What is in store for the future?
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/CE4_zpsb831mb2u.png)
+
+## Nosema Model MKIII
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/CE3_zpshzntaock.png)
+
+## Interactions with RNA viruses
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/CE_zpsoogx2qx0.png)
+
+## Interactions with RNA viruses
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/CE8_zpse2k0131c.png)
+
+## Interactions with RNA viruses
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/CE9_zpsp6gqijvd.png)
+
+
+##Thank You!
+
+* Samantha Alger
+* Dr. Alison Brody
+* Dr. Joseph Schall
+* Dr. Brandon Ogbunugafor
+
+* Work Study Army:
+      + Anna Smith
+      + Kristen Switzer
+      + Sarah Erskine 
+      + Tyler Brown
+      
+* Dr. Nicholas Gotelli
+      
+
+## ARE THERE ANY QUESTIONS?
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/IMG_2437_zpsaufa7mvr.jpg)
+
+
+

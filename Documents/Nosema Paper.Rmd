@@ -1,0 +1,528 @@
+---
+output: pdf_document
+---
+
+$$\text{Nosema at large: A survey and epidemiological model of a microsporidan parasite in Vermont bumble bees}$$
+
+
+$$\text{P. Alexander Burnham}$$
+
+>**ABTRACT:**
+
+ > Pollinators contribute more than $250 billion annually in pollination services. Bumble bees are important native pollinators, however, their decline has not been as well studied as that of honeybees. In 2015, Vermont added *Bombus affinis* and *B. ashtoni* to the endangered species list and *B. terricola* was listed as threatened. Pathogens, like the microsporidian parasite *Nosema*, are thought to be a factor in their decline. *Nosema* lives in the ventriculus of its host and is known to cause sub-lethal effects such as dysentery and decreased forging efficiency as well as increase mortality in heavily infected individuals. To examine the prevalence of *Nosema* in Vermont bumble bees, and examine patterns of infection across species and geography, we conducted a survey. In 2014, 350 bumblebees were randomly netted at 13 different field sights across Northern Vermont. Flowering vegetation transects and bee abundance surveys were conducted at each site. The ventriculus was dissected out of each bee and was homogenized. Spores were counted for each bee using a hemocytometer. These data were analyzed by species, site and caste and honeybee presence. No significant relationships were found, however, the parasite exhibited a prevalence of 20%. The ubiquitous nature of *Nosema* makes looking at interactions between other pathogens relevant to bumble bee decline due to the high probability of co-infection. In future studies I intend to look for synergistic interactions between different species of *Nosema* and RNA viruses in order to better understand the part this parasite is playing in the decline of some of our most important pollinators.  
+
+**INTRODUCTION:**
+
+  The documented decline of important pollinators has garnered much attention and concern in recent years. Bumble bees (*Bombus spp.*) in particular are important native pollinators whose decline has been understudied in light of managed honeybee losses (van Engelsdorp et al., 2008). Certain plants, most notably of the genus *Solanum* (tomatoes, potatoes and eggplant), primarily rely on pollination provided by bumble bees as honeybees are poor pollinators of these plants (Strange, 2015; Thornsbury and Jerardo, 2012). Bumble bee declines in recent years have the potential to drastically disrupt the pollination services they provide and the industries that rely on them. Species such as *B. affinis, B. borealis, B. ashtoni, B. fervidus, B. pensylvanicus, and B. sandersoni* (all species that can be found in Vermont) have decreased in abundance since the 1960s (Colla et al., 2012). In 2015, the state of Vermont listed two species of bumblebees as endangered (*B. affinis and B. ashtoni*) and one as threatened (*B. terricola*) (Vermont Fish and Wildlife Department, 2015).
+  
+  There are many pathogens that are thought to be causing bumble bee declines. One parasite in particular, the microsporidian *Nosema sp.*, is considered to be an important detrimental parasite to bumble bees. *Nosema* lives in the ventriculus of its host. It has been shown to cause dysentery and adversely affects forging efficiency (Otterstatter et al., 2005). Spores can be transferred when a bumble bee visits a flower that has already been visited by an infected bee (Imhoof and Schmid-Hempel, 1999). The two species that affect bumble bees are *N. bombi* (the native species) and *N. ceranae* (an introduced species). *N. ceranae* has become ubiquitous in the European honeybee (*A. mellifera*), outcompetes *A. mellifera*’s unique species of *Nosema* (*N. apis*) and has bee recently found in bumble bee populations (A. Bourgeois et al., 2010; M. Natsopoulou et al., 2014).  
+  
+  In this study we examine the prevalence of *Nosema spp.* in Vermont’s bumble bee populations. We ask whether various bumble bee life history traits such as species or caste influence the prevalence of this parasite. In addition, we look at how proximity to honeybee apiaries affects parasite prevalence. **(I)** We hypothesize that differences in species phenology and morphology will create variation in parasite prevalence between species. **(II)** We hypothesize that there will be differences in prevalence between caste (queens, workers and males) due to differences in exposure to floral parasite reservoirs. **(III)** We also hypothesize that bees caught adjacent to honeybee apiaries will exhibit a higher prevalence due to the pathogen spillover hypothesis. Using the data collected from this study, we created and parameterized an epidemiological model to describe the dynamics of this understudied parasite system. 
+
+
+
+**METHODS:**
+
+>**Data Collection and Analysis:**
+
+
+Over 350 bumble bees were collected in northern Vermont from 13 different field sites during the summer of 2014. The bees were netted randomly while foraging on flowers. Queens and males were caught as well as workers. The bees were put on dry ice in the field and were transferred to a -80^o^C freezer within 12 hours of being captured. At each site, bee abundance and vegetation surveys were performed on 100m transects. In addition, forging honeybees were netted and pollinator friendly flowers collected at each site. GPS coordinates, elevation, weather conditions, and nearest town were also logged at each location.
+
+In order to assay each bee for *Nosema*, the ventriculus was dissected from the bee by pulling on the last segment (terga) of the abdomen. The ventriculus for each bee was then homogenized in 500uL of GITC buffer with a polypropylene pestle for one minute. These were then vortexed and 10uL of the homogenized bee gut were put into each chamber of a hemocytometer. Counts were made of the *Nosema* spores present using a traditional Neubauer® counting grid and the two chambers were averaged together resulting in a total count. 
+
+These data were analyzed in R using a contingency table and a Pearson's Chi-squared test. Tables of the independent variables (species, caste and honeybee proximity) by the presences/absences Nosema data (binary) were created. Infected and uninfected vectors were created and bound into a matrix using the function, "rbind()". The tests were performed using the "chi.sq()" function and mosaic plots were created using the "mosaicplot()" function.
+
+
+```{r, results="hide",fig.keep='none'}
+setwd("~/Desktop/NosemaData_2")
+
+NosemaDF <- read.table("Nosema_Data_R.csv",
+                       header=TRUE,
+                       row.names=1,sep=",",
+                       stringsAsFactors=FALSE)
+
+attach(NosemaDF)
+library(RColorBrewer)
+
+CasteTab <- table(Caste,NosemaPA)
+Infected<-CasteTab[,2]
+Uninfected<-CasteTab[,1]
+data <- rbind(Infected,Uninfected)
+rownames(data) <- c("Infected", "Uninfected")
+colnames(data) <- c("Males", "Queens", "Workers")
+
+colors<-colorRampPalette(brewer.pal(9,"Blues"))(3)
+
+print(chisq.test(data))
+
+mosaicplot(data,col=colors,
+           shade=FALSE,
+           main="Prevalence of Nosema by Caste",
+           ylab = "Caste")
+```
+
+
+```{r, include=FALSE}
+SpeciesTab <- table(Species,NosemaPA)
+SpeciesTab <- SpeciesTab[-3,]
+SpeciesTab <- SpeciesTab[-3,]
+SpeciesTab <- SpeciesTab[-5,]
+Infected<-SpeciesTab[,2]
+Uninfected<-SpeciesTab[,1]
+data1 <- rbind(Infected,Uninfected)
+rownames(data1) <- c("Infected", "Uninfected")
+colnames(data1) <- c("bimac.", "bor.", "imp.", "tern.", "vag.")
+
+colors1<-colorRampPalette(brewer.pal(9,"Blues"))(5)
+
+print(chisq.test(data1))
+mosaicplot(data1,col=colors1,shade=FALSE,
+           main="Prevalence of Nosema by Species",
+           ylab = "Nosema Spp.")
+```
+
+
+```{r, include=FALSE}
+hbTab <- table(hbPA,NosemaPA)
+Infected<-hbTab[,2]
+Uninfected<-hbTab[,1]
+data2 <- rbind(Infected,Uninfected)
+rownames(data2) <- c("Infected", "Uninfected")
+colnames(data2) <- c("Near", "Far")
+
+colors2<-colorRampPalette(brewer.pal(9,"Blues"))(2)
+
+print(chisq.test(data2))
+mosaicplot(data2,col=colors2,
+           shade=FALSE, 
+           main="Prevalence of Nosema by Honeybee Proximity",
+           ylab = "Honeybee Proximity")
+
+```
+
+
+>**Epidemiological Modeling:** 
+
+![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/CE10_zpstajjl7j3.png)
+Figure 1:   The beta and gamma terms were derived from the empirical data of the survey. Beta is the conversion rate from susceptible to infected. Gamma is the conversion rate from infected to critically infected (diseased state). Beta=(#infected/total#), gamma=(#critically infected/#infected). The death rates (muA and muB), fecal deposition rates (alpha1 and alpha2) were estimated, as was the initial rate of infection (I1).
+
+
+
+This model describes the dynamics in this parasite system. Parameters were calculated or estimated depending on availability of data to describe the dynamics of the infection rate (Fig. 1). Terms were developed to describe the system. The system of equations that makes up the model is shown below:
+
+
+
+
+>$\frac{dS}{dt} = {-S}{P}{\beta} - {S}{\mu_A}$ 
+
+
+
+>$\frac{dI_1}{dt} = {S}{P}{\beta} - {I_1}{\mu_A} - {I_1}{\gamma}$ 
+
+
+
+>$\frac{dI_2}{dt} = {I_1}{P}{\gamma} - {I_2}{\mu_B}$ 
+
+
+
+>$\frac{dP}{dt} = {I_1}{\alpha_1}+ {I_2}{\alpha_2} - {P}{\theta}$ 
+
+
+
+The equations were solved using an R package called “deSolve”. This eliminated the need for for-loops. Vectors for initial values and parameters were created and a time sequence of 150 days was set up to replicate the period that bumble bees are active in a temperate climate. The infected and critically infected vectors were subtracted from 1 to represent the susceptible population. These vectors were bound in a matrix and plotted using "matplot()".
+
+```{r, results="hide",,fig.keep='none'}
+# Nosema Model MKIV (28 April 2016)
+#----------------------------------------------------------------------
+
+
+# Parameters:
+# dSdt = -[S][P]beta-[S]muA
+# dI1dt = [S][P]beta-[I1]muA-[I1]gamma
+# dI2dt = -[I1][P]gamma-[I2]muB
+# dPdt = [I1]alpha1 + [I2]alpha2-[P]theta
+# S = Initial Bombus Population on landscape
+# I1 = Portion of Bombus infected
+# I2 = Portion of Infected that are critically infected
+# P = Population of fecal matter on landscape (mL)
+# beta = rate of conversion from S to I1
+# alpha1 = rate of fecal deposition from I1 to P (mL)
+# alpha2 = rate of fecal deposition from I2 to P (mL)
+# theta = decay of P (mL)
+# gamma = rate of conversion from I1 to I2
+# muA = natural death rate of S and I1
+# muB = death rate of critically infected
+# time = time (days)
+
+
+#------------------------------------------------------------------------
+
+# Preliminaries: 
+
+library(deSolve)
+
+# create a function using desolve
+NosemaModel2 <- function(t, state, parameters){
+  with(as.list(c(state, parameters)), {
+    
+    dSdt <- -(S * P * beta) - (S * muA) 
+    dI1dt <- (S * P * beta) - (I1 * muA) - (I1 * gamma) 
+    dI2dt <- (I1 * P * gamma) - (I2 * muB)
+    dPdt <- (I1 * alpha1) + (I2 * alpha2) - (P * theta) 
+    
+    
+    return(list(c(dSdt,dI1dt,dI2dt,dPdt)))
+  })
+}
+
+# set parameters
+state<-c(S=1, I1=0.05, I2=0.00, P=0.0)
+parameters <- c(
+  beta=0.202,
+  alpha1=0.07,
+  alpha2=0.010,
+  gamma=0.05,
+  muA=0.011,
+  muB=0.025,
+  theta=0.01
+)
+
+# set up time steps
+times <- seq(0,150,by=1)
+
+#Subset data and remove time
+out <- ode(y=state,times=times, func=NosemaModel2, parms=parameters)
+out<-as.data.frame(out)
+out$time <- NULL
+out$S <- NULL
+NosemaLS <- out
+NosemaLS <- (NosemaLS[,3])
+out$P <- NULL
+Surv <- 1 - (out[,1]+out[,2])
+out <- cbind(out,Surv)
+
+#Plot figure
+matplot(x=times,y=out,
+        type="l",
+        xlab="Time (days)", 
+        ylab="Rate of Nosema Infection", 
+       # main="Infection Rate through Time",
+        lwd=3,
+        ylim=c(0,1),
+        lty=1,
+        font.lab=2,
+        bty="l", 
+        col=c("blue","red", "green"))
+
+grid(col="black")
+
+legend(x=68,y=0.6,
+       legend=c("Infected",
+                "Critically Infected",
+                "Susceptable"),
+       pch=19,
+       col=c("blue","red", "green"),
+       bty="n",
+       bg="white")
+```
+
+
+
+```{r, include=FALSE}
+# create a function using desolve
+NosemaModel2 <- function(t, state, parameters){
+  with(as.list(c(state, parameters)), {
+    
+    dSdt <- -(S * P * beta) - (S * muA) 
+    dI1dt <- (S * P * beta) - (I1 * muA) - (I1 * gamma) 
+    dI2dt <- (I1 * P * gamma) - (I2 * muB)
+    dPdt <- (I1 * alpha1) + (I2 * alpha2) - (P * theta) 
+    
+    
+    return(list(c(dSdt,dI1dt,dI2dt,dPdt)))
+  })
+}
+
+# set parameters
+state<-c(S=1, I1=0.01, I2=0.00, P=0.0)
+parameters <- c(
+  beta=0.202,
+  alpha1=0.07,
+  alpha2=0.010,
+  gamma=0.05,
+  muA=0.011,
+  muB=0.025,
+  theta=0.01
+)
+
+# set up time steps
+times <- seq(0,150,by=1)
+
+#Subset data and remove time
+out1 <- ode(y=state,times=times, func=NosemaModel2, parms=parameters)
+out1<-as.data.frame(out1)
+out1$time <- NULL
+out1$S <- NULL
+NosemaLS <- out1
+NosemaLS <- (NosemaLS[,3])
+out1$P <- NULL
+Surv <- 1 - (out1[,1]+out1[,2])
+out1 <- cbind(out1,Surv)
+
+```
+
+```{r, include=FALSE}
+# create a function using desolve
+NosemaModel2 <- function(t, state, parameters){
+  with(as.list(c(state, parameters)), {
+    
+    dSdt <- -(S * P * beta) - (S * muA) 
+    dI1dt <- (S * P * beta) - (I1 * muA) - (I1 * gamma) 
+    dI2dt <- (I1 * P * gamma) - (I2 * muB)
+    dPdt <- (I1 * alpha1) + (I2 * alpha2) - (P * theta) 
+    
+    
+    return(list(c(dSdt,dI1dt,dI2dt,dPdt)))
+  })
+}
+
+# set parameters
+state<-c(S=1, I1=0.10, I2=0.00, P=0.0)
+parameters <- c(
+  beta=0.202,
+  alpha1=0.07,
+  alpha2=0.010,
+  gamma=0.05,
+  muA=0.011,
+  muB=0.025,
+  theta=0.01
+)
+
+# set up time steps
+times <- seq(0,150,by=1)
+
+#Subset data and remove time
+out2 <- ode(y=state,times=times, func=NosemaModel2, parms=parameters)
+out2<-as.data.frame(out2)
+out2$time <- NULL
+out2$S <- NULL
+NosemaLS <- out2
+NosemaLS <- (NosemaLS[,3])
+out2$P <- NULL
+Surv <- 1 - (out2[,1]+out2[,2])
+out2 <- cbind(out2,Surv)
+
+```
+
+
+**RESULTS:**
+
+>**Data Collection and Analysis**
+
+The prevalence of *Nosema* was found to be 20.2% across all species and castes. The critically infected bees comprised of 5% of all infected bees. There was found to be variability among species. *B. vagans* showed the lowest susceptibility to *Nosema* while *B. borealis* and *B. ternarius* showed the highest (Fig 2). However, this variability was found to be insignificant using a contingency table with a Chi-squared test (p=0.299) and we failed to reject the null hypothesis that prevalence across species is the same. When looking at prevalence by caste, we found that the percent infected was highest in males and lowest in workers contrary to our hypothesis. However, the sample size of males was significantly lower than the other two castes (Fig. 3). The differences were also found to be insignificant. The results of a Chi-squared test yielded a p-value of 0.468. Proximity to honeybees was also found to be statistically insignificant. Though prevalence was higher in bumble bees caught near honeybee apiaries, the Chi-squared test showed that the difference was minimal (p=0.481) (Fig 4). As these three factors appeared to show little effect upon the prevalence of *Nosema*, a more simplified model of this system (ignoring caste and species effects on infection) could be created using the total prevalence of the infected bees and total prevalence of critically infected bees as rates in an elementary SIR-style model.    
+
+
+
+
+
+
+
+
+
+```{r, echo=FALSE}
+mosaicplot(data1,col=colors1,shade=FALSE,
+           main="Prevalence of Nosema by Species",
+           ylab = "Bombus spp.")
+```
+
+Figure 2:     The prevalence of *Nosema* (binary variable) plotted against the five most common *Bombus spp.* in this data set (*B. bimaculatus, B. borealis, B. impatiens, B. ternarius and B. vagans*). This mosaic plot shows the infected and uninfected proportions of each species of bumble bee. A Chi-squared test yielded and insignificant p-value (p=0.299) indicating no difference between species.
+
+
+```{r, echo=FALSE}
+mosaicplot(data,col=colors,
+           shade=FALSE,
+           main="Prevalence of Nosema by Caste",
+           ylab = "Caste")
+```
+
+Figure 3:     The prevalence of *Nosema* (binary variable) plotted against the three castes (males, queens and workers). This mosaic plot shows the infected and uninfected proportions of bees in each caste. A Chi-squared test yielded and insignificant p-value (p=0.468) indicating no difference between castes.
+
+
+```{r, echo=FALSE}
+mosaicplot(data2,col=colors2,
+           shade=FALSE, 
+           main="Prevalence of Nosema by Honeybee Proximity",
+           ylab = "Honeybee Proximity")
+```
+Figure 4:     The prevalence of *Nosema* (binary variable) plotted against the honeybee proximity (near an apiary/far from an apiary). mosaic plot shows the infected and uninfected proportions of bees near and far from an apiary. A Chi-squared test yielded and insignificant p-value (p=0.481) indicating no difference in parasite prevalence due to honeybee proximity.
+
+>**Epidemiological Modeling** 
+
+
+The model recreated the dynamics at play within this system. The relationship between infected and critically infected bees as a result of shedding on the landscape in the form of fecal deposition on flowers was shown as a function of time (early spring to fall). The model recreated an early spring outbreak with the infected prevalence peaking at around 20%. The critically infected curve showed a tendency to occur later in the season after the infected curve had reached its apex (Fig. 5). The initial prevalence of the parasite (time step 0) was estimated at 5%. However, changing this value had significant effects on how the course of the outbreak proceeded. If less parasites survived the winter inside hibernating bumble bee queens and the initial rate of infection was lower the following year (1%), the infected curve occurred much later in the year peaking at only around 0.17. The critically infected bees also were shown to exhibit a lower prevalence in this case and were even further shifted to the right (Fig 6). If the initial rate of infection were raised to 10% to indicate a higher parasite survival at the last time step of the preceding year, both rates of infection followed similar patterns however the curves peaked at higher values and the outbreak occurred earlier in the year. 
+
+
+
+
+
+```{r, echo=FALSE}
+
+#Plot figure
+matplot(x=times,y=out,
+        type="l",
+        xlab="Time (days)", 
+        ylab="Rate of Nosema Infection", 
+       # main="Infection Rate through Time",
+        lwd=3,
+        ylim=c(0,1),
+        lty=1,
+        font.lab=2,
+        bty="l", 
+        col=c("blue","red", "green"))
+
+grid(col="black")
+
+legend(x=68,y=0.6,
+       legend=c("Infected",
+                "Critically Infected",
+                "Susceptable"),
+       pch=19,
+       col=c("blue","red", "green"),
+       bty="n",
+       bg="white")
+
+```
+
+Figure 5: The infection rate through time beginning in the early spring and ending in the early fall. The susceptible population is shown in green and the infection rate in blue. The critically infected (diseased state) rate is shown in red. The parameters for this model are: beta=0.202 (data), gamma=0.05 (data), I1=0.05 (estimated).
+
+
+
+
+
+
+
+```{r, echo=FALSE}
+
+par(mfrow=c(1,2))
+#Plot figure
+matplot(x=times,y=out1,
+        type="l",
+        xlab="Time (days)", 
+        ylab="Rate of Nosema Infection", 
+       # main="Infection Rate through Time",
+        lwd=3,
+        ylim=c(0,1),
+        lty=1,
+        font.lab=2,
+        bty="l", 
+        col=c("blue","red", "green"))
+
+grid(col="black")
+
+legend(x=10,y=0.6,
+       legend=c("Infected",
+                "Critically Infected",
+                "Susceptable"),
+       pch=19,
+       col=c("blue","red", "green"),
+       bty="n",
+       bg="white")
+
+#Plot figure
+matplot(x=times,y=out2,
+        type="l",
+        xlab="Time (days)", 
+        ylab="Rate of Nosema Infection", 
+       # main="Infection Rate through Time",
+        lwd=3,
+        ylim=c(0,1),
+        lty=1,
+        font.lab=2,
+        bty="l", 
+        col=c("blue","red", "green"))
+
+grid(col="black")
+
+legend(x=10,y=0.6,
+       legend=c("Infected",
+                "Critically Infected",
+                "Susceptable"),
+       pch=19,
+       col=c("blue","red", "green"),
+       bty="n",
+       bg="white")
+
+```
+Figure 6: The infection rate through time beginning in the early spring and ending in the early fall. The susceptible population is shown in green and the infection rate in blue. The critically infected (diseased state) rate is shown in red. The parameters are set to: beta=0.202 (data), gamma=0.05 (data). I1 (initial infection rate) is being changed from lower value (0.01) on the right to a higher value (0.10) on the left. The higher value results in a higher rate of infection that occurs earlier in the year.
+
+
+
+
+
+
+
+
+
+**DISCUSSION:**
+
+
+This survey gives valuable insight into a relatively understudied parasite in a very important host organism. The data seem to suggest that though there is some variation in *Nosema* prevalence across species, caste and proximity to honeybees, the parasite is ubiquitous and seems to be equally prevalent regardless of these variables. The 20.2% prevalence that we found also appears to be relatively high for this parasite, which was found in much lower abundance in a 2006-2007 survey (Kissinger et al., 2011). It is possible the limited sample sizes for male bees might have lowered the sensitivity of the test and perhaps a power analysis might be prudent to attempt to discover an optimal sample size for future surveys. It is also true that while our study didn't show a significant difference in prevalence in terms of these three variables, it is possible that future analysis of the actual count data might yield significant results. However, this study does provide useful pilot data that gives us a general idea of how to approach these questions and allows us to parameterize a model. Modeling improves our understanding of the system dynamics and helps us to look at new questions posed by the model.
+
+The model describes a *Nosema* outbreak during a 150 day period ranging from early spring to mid fall. The infection peaks in early spring as described by the literature. The way that the critically infected population grows after the infected population peaks seems to describe the latency period where certain infected bees might become critically infected (Fig. 5). The part that initial infection rate at time step 0 plays seems to be of critical importance to the system. Fluctuations in that value change the temporal pattern and intensity that the outbreak follows (Fig. 6). Though the initial infected population is estimated, it is a good example of a question posed by the model that might be important to the overall system. The number of infected bees that survive the winter and begin the infection anew the following spring could be determined experimentally and would help add to our understanding of the way *Nosema* persists on the landscape on a year to year bases. 
+
+This study both helps us on the path to understanding some important question about this parasite, but also asks many others. Since *Nosema* seems to be so prevalent on the landscape and commonly found across northern Vermont, we might consider the increased probability of co-infection. Since the probability of being infected with *Nosema* is higher than previously thought, the chances of an infected bee coming into contact with a different pathogen such as an RNA virus might also increase. Viruses like Deformed Wing Virus (DWV) and Black Queen Cell Virus (BQCV) cause behavior abnormalities, inefficient foraging, wing deformities, abnormal queen cells and death (D. Schroeder and S. Martin, 2012; P. Graystock et al., 2015). As there are also two species of *Nosema* that infect bumble bees, and competition has been shown to exist between *Nosema spp.* in honeybees (A. Bourgeois et al., 2010), a similar interaction might exist in bumble bees. In the future we will examine if co-infection between *Nosema spp.* and RNA viruses (DWV and BQCV) leads to synergistic effects that further compromise bee health. We will also examine if the introduction of the invasive parasite *N. ceranae* has led to interspecific competition with *N. bombi*. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+
+**REFERENCES:** 
+
+Bourgeois, A. L., Rinderer, T. E., Beaman, L. D., & Danka, R. G. (2010). Genetic detection and quantification of Nosema apis and N . ceranae in the honey bee. Journal of Invertebrate Pathology, 103(1), 53–58.
+
+Colla, S. R., Gadallah, F., Richardson, L., Wagner, D., & Gall, L. (2012). Assessing declines of North American bumble bees (Bombus spp.) using museum specimens. Biodiversity and Conservation, 21(14), 3585–3595. 
+
+Fries, I., Chauzat, M.-P., Chen, Y.-P. P., Doublet, V., Genersch, E., Gisder, S., … Gisder, S. (2013). Standard methods for nosema research. Journal of Apicultural Research, 52(1), 1–28.
+
+Graystock, P., Meeus, I., Smagghe, G. U. Y., Goulson, D., & Hughes, W. O. H. (2015). The e ff ects of single and mixed infections of Apicystis bombi and deformed wing virus in Bombus terrestris. 
+
+
+Imhoof, B., & Schmid-Hempel, P. (1999). Colony success of the bumble bee, Bombus terrestris, in relation to infections by two protozoan parasites, Crithidia bombi and Nosema bombi. Insectes Sociaux, 46(3), 233–238.
+
+Kissinger, C. N., Cameron, S. a., Thorp, R. W., White, B., & Solter, L. F. (2011). Survey of bumble bee (Bombus) pathogens and parasites in Illinois and selected areas of northern California and southern Oregon. Journal of Invertebrate Pathology, 107(3), 220–224. 
+
+Otterstatter, M. C., Gegear, R. J., Colla, S. R., & Thomson, J. D. (2005). Effects of parasitic mites and protozoa on the flower constancy and foraging rate of bumble bees. Behavioral Ecology and Sociobiology, 58(4), 383–389. 
+
+Schroeder, D. C., Martin, S. J., Hill, C., & Manchester, G. (2012). Virulence News & Views Deformed wing virus: The main suspect in unexplained honeybee deaths, 589–598.
+
+Strange, J. P. (2015). Bombus huntii, Bombus impatiens, and Bombus vosnesenskii (Hymenoptera: Apidae) Pollinate Greenhouse-Grown Tomatoes in Western North America. Journal of Economic Entomology. 
+
+Natsopoulou, M. E., Mcmahon, D. P., Doublet, V., Bryden, J., & Paxton, R. J. (2014). Interspecific competition in honeybee intracellular gut parasites is asymmetric and favours the spread of an emerging infectious disease.
+
+Thornberry, S., and A. Jerardo. 2012. Vegetables and Pulses Outlook. USDA, Economic Research Service, p. 52. 
+
+Van Engelsdorp, D., Hayes, J., Underwood, R. M., & Pettis, J. (2008). A survey of honey bee colony losses in the U.S., Fall 2007 to Spring 2008. PLoS ONE, 3(12), 8–13. 
+
+Vermont adds nine species to threatened and endangered list. (2015) Vermont Fish
+and Wildlife Department. Retrieved 9/5/15 from http://www.vtfishandwildlife.com
+/cms/One.aspx?portalId=73163&pageId=269142
+
+
+
