@@ -1,10 +1,12 @@
+######################################################################################################
 # Nosema Model Mk I
 # P. Alexander Burnham
 # 6 April 2016
+######################################################################################################
 
-
-#----------------------------------------------------------------------
 # Parameters:
+#----------------------------------------------------------------------
+
 # dSdt = -[S][P]beta-[S]muA
 # dI1dt = [S][P]beta-[I1]muA-[I1]gamma
 # dI2dt = -[I1][P]gamma-[I2]muB
@@ -22,13 +24,12 @@
 # muB = death rate of critically infected
 # time = time (days)
 
-#----------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 # Preliminaries: 
 ls()
 rm(list=ls())
-ls()
 
-#----------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 # model MK 1:
 
 library(deSolve)
@@ -89,15 +90,15 @@ legend(x=100,y=0.8,
        bg="white")
 
 
-
-
-
+######################################################################################################
 # Nosema Model MKII (11 April 2016) Plotting Infected Feces on Landscape 
 # on a second figure to the right. 
-#----------------------------------------------------------------------
+######################################################################################################
 
 
 # Parameters:
+#----------------------------------------------------------------------
+
 # dSdt = -[S][P]beta-[S]muA
 # dI1dt = [S][P]beta-[I1]muA-[I1]gamma
 # dI2dt = -[I1][P]gamma-[I2]muB
@@ -121,7 +122,6 @@ legend(x=100,y=0.8,
 # Preliminaries: 
 ls()
 rm(list=ls())
-ls()
 
 library(deSolve)
 
@@ -210,8 +210,10 @@ grid(col="gray")
 
 
 
-#------------------------------------------------------------------------
+######################################################################################################
 # Nosema Model MKIII (13 April 2016) added growth rates and new dif. equation to describe infection rates within colony to feed back into the system. (NOT FUNCTIONING YET!)
+######################################################################################################
+
 
 # Parameters:
 # dSdt = -[S][P]beta-[S]muA
@@ -336,13 +338,17 @@ legend(x="bottomright",
        bty="n",
        bg="white")
 
-
-
-# Nosema Model MKIV (28 April 2016) Removed curve describing nosema reservoir on landscape for simplicities sake. This is the iteration used during my biolunch talk:
-#----------------------------------------------------------------------
-
+######################################################################################################
+######################################################################################################
+######################################################################################################
+# Nosema Model MKIV (28 April 2016) Removed curve describing nosema reservoir on landscape for simplicity. This is the iteration used during my biolunch talk:
+######################################################################################################
+######################################################################################################
+######################################################################################################
 
 # Parameters:
+#-----------------------------------------------------------------------------------------------------
+
 # dSdt = -[S][P]beta-[S]muA
 # dI1dt = [S][P]beta-[I1]muA-[I1]gamma
 # dI2dt = -[I1][P]gamma-[I2]muB
@@ -366,13 +372,27 @@ legend(x="bottomright",
 # Preliminaries: 
 ls()
 rm(list=ls())
-ls()
 
 library(deSolve)
 
 par(mfrow=c(1,1))
 
-# create a function using desolve
+# initial state of system
+state<-c(S=1, I1=0.05, I2=0.00, P=0.0)
+
+# set parameters
+parameters <- c(
+  beta=0.202,
+  alpha1=0.07,
+  alpha2=0.010,
+  gamma=0.05,
+  muA=0.011,
+  muB=0.025,
+  theta=0.01
+)
+
+#====================================================================================================
+# create a function for this disease system using desolve
 NosemaModel4 <- function(t, state, parameters){
   with(as.list(c(state, parameters)), {
     
@@ -385,38 +405,33 @@ NosemaModel4 <- function(t, state, parameters){
     return(list(c(dSdt,dI1dt,dI2dt,dPdt)))
   })
 }
-
-# set parameters
-state<-c(S=1, I1=0.05, I2=0.00, P=0.0)
-parameters <- c(#r=0.05,
-  beta=0.202,
-  alpha1=0.07,
-  alpha2=0.010,
-  gamma=0.05,
-  muA=0.011,
-  muB=0.025,
-  theta=0.01
-)
+#====================================================================================================
 
 # set up time steps
 times <- seq(0,150,by=1)
 
-#Subset data and remove time
+
+
+
+# use ode() to to create an output
 out <- ode(y=state,times=times, func=NosemaModel4, parms=parameters)
 out<-as.data.frame(out)
+
+# remove unwanted columns for this model
 out$time <- NULL
 out$S <- NULL
-NosemaLS <- out
-NosemaLS <- (NosemaLS[,3])
 out$P <- NULL
+
+# set survival equal to  1 - pooled infected (I1+I2)
 Surv <- 1 - (out[,1]+out[,2])
 out <- cbind(out,Surv)
 head(out,10)
 
 
-
+#---------------------------------------------------------------------------------------------------
 #par(mfrow=c(1,2))
 #Plot figure
+
 matplot(x=times,y=out,
         type="l",
         xlab="Time (days)", 
@@ -440,14 +455,36 @@ legend(x=100,y=0.6,
        bty="n",
        bg="white")
 
+#####################################################################################################
+# END MODEL MKIV
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+######################################################################################################
 # Nosema Model MKV (5 May 2016) includes growth rates but no equation for colony as a reservoir for nosema (not quite playing nice yet)
-#----------------------------------------------------------------------
+######################################################################################################
 
 
 # Parameters:
+#-----------------------------------------------------------------------------------------------------
+
 # dSdt = -[S][P]beta-[S]muA
 # dI1dt = [S][P]beta-[I1]muA-[I1]gamma
 # dI2dt = -[I1][P]gamma-[I2]muB
@@ -467,7 +504,6 @@ legend(x=100,y=0.6,
 # r2 = growth rate for I1
 # r3 = growth rate for I2
 # time = time (days)
-
 
 #------------------------------------------------------------------------
 
@@ -550,7 +586,8 @@ legend(x=68,y=0.6,
        bty="n",
        bg="white")
 
-
+######################################################################################################
+# END MODEL ITERATIONS
 
 
 
