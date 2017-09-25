@@ -11,6 +11,7 @@ rm(list=ls())
 # Set Working Directory: 
 setwd("~/Dissertation/TemporalVariationCoinfection/Data")
 
+# read in data:
 TempVar <- read.csv("TempVarData.csv",header=TRUE,sep=",",stringsAsFactors=FALSE)
 
 ###############################################################################################
@@ -113,14 +114,14 @@ p1 <- ggplot(data = Path,
        aes(x = SamplingEvent, 
            y = mean, 
            color = variableName)
-) + geom_point(size=4) + labs(x = NULL, y = "Prevalance") + coord_cartesian(ylim = c(0, 1), xlim = c(1,3)) + geom_errorbar(aes(ymin = mean - se, ymax = mean + se, width = 0.05)) + geom_line(size=1) + scale_fill_brewer(palette = "Paired") + theme_classic(base_size = 17) + theme(legend.position=c(.85, .25), panel.border = element_blank(), axis.line.x = element_line(colour = 'black', size=0.5, linetype='solid'), axis.line.y = element_line(colour = 'black', size=0.5, linetype='solid'), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.text.x=element_blank(), axis.title.y=element_text(margin=margin(0,20,0,0))) + labs(color="Pathogen:") + scale_x_continuous(breaks=c(1,2,3))
+) + geom_point(size=4) + labs(x = NULL, y = "Prevalance") + coord_cartesian(ylim = c(0, 1), xlim = c(1,3)) + geom_errorbar(aes(ymin = mean - se, ymax = mean + se, width = 0.05)) + geom_line(size=1) + scale_fill_brewer(palette = "Paired") + theme_classic(base_size = 17) + theme(legend.position=c(.85, .24), panel.border = element_blank(), axis.line.x = element_line(colour = 'black', size=0.5, linetype='solid'), axis.line.y = element_line(colour = 'black', size=0.5, linetype='solid'), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.text.x=element_blank(), axis.title.y=element_text(margin=margin(0,20,0,0))) + labs(color="Pathogen:") + scale_x_continuous(breaks=c(1,2,3))
 
 # plotting brood measures through time
 p2 <- ggplot( data = Brood, 
        aes(x = SamplingEvent, 
            y = mean, 
            group = variableName)
-) + geom_point(size=4) + labs(x = "Sampling Event", y = "Relitive Intensity") + coord_cartesian(ylim = c(0, 1), xlim = c(1,3)) + geom_line(aes(linetype=variableName), size=1) + scale_fill_brewer(palette = "Paired") + theme_classic(base_size = 17) + theme(legend.position=c(.2, .85), panel.border = element_blank(), axis.line.x = element_line(colour = 'black', size=0.5, linetype='solid'), axis.line.y = element_line(colour = 'black', size=0.5, linetype='solid'), panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + labs(linetype="Population:") + scale_x_continuous(breaks=c(1,2,3))
+) + geom_point(size=4) + labs(x = "Sampling Event", y = "Rel. Intensity") + coord_cartesian(ylim = c(0, 1), xlim = c(1,3)) + geom_line(aes(linetype=variableName), size=1) + scale_fill_brewer(palette = "Paired") + theme_classic(base_size = 17) + theme(legend.position=c(.22, .87), panel.border = element_blank(), axis.line.x = element_line(colour = 'black', size=0.5, linetype='solid'), axis.line.y = element_line(colour = 'black', size=0.5, linetype='solid'), panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + labs(linetype="Population:") + scale_x_continuous(breaks=c(1,2,3))
 
 
 # use cowlpot package to combine the two figures:
