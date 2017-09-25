@@ -1,4 +1,6 @@
-![](/Pictures/IMG_8021.PNG) 
+![](/Users/phillipburnham/Dissertation/Pictures/IMG_8021.PNG) 
+
+
 
 ## P. Alexander Burnham
 
