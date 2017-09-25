@@ -1,4 +1,4 @@
-![IMG_8021.JPG](/Users/phillipburnham/Desktop/Grad/IMG_8021.JPG.jpeg) 
+![](/Pictures/IMG_8021.PNG) 
 
 ## P. Alexander Burnham
 
