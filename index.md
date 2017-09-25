@@ -1,4 +1,4 @@
-![](/Users/phillipburnham/Dissertation/Pictures/IMG_8021.PNG) 
+![](Pictures/IMG_8021.PNG) 
 
 
 
