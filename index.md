@@ -6,6 +6,5 @@ My interests include disease ecology, ecological modeling, statistics and pollin
 
 ## Resources:
 
-* [Meeting with Alison and Nick - September 26, 2017](meeting_AlisonNick_1.html)
-* [Figures](MeetingPics.html)
+* [Advisor Meetings](meetings.html)
 
