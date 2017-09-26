@@ -1,4 +1,4 @@
-![](Pictures/IMG_8021.PNG) 
+![](Pictures/smoker.png) 
 
 
 
