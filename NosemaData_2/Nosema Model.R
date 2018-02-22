@@ -418,19 +418,17 @@ out <- ode(y=state,times=times, func=NosemaModel4, parms=parameters)
 out<-as.data.frame(out)
 
 # remove unwanted columns for this model
-out$time <- NULL
-out$S <- NULL
+#out$time <- NULL
+#out$S <- NULL
 out$P <- NULL
 
 # set survival equal to  1 - pooled infected (I1+I2)
-Surv <- 1 - (out[,1]+out[,2])
-out <- cbind(out,Surv)
-head(out,10)
+#Surv <- 1 - (out[,1]+out[,2])
+#out <- cbind(out,Surv)
+#head(out,10)
 
 
-#---------------------------------------------------------------------------------------------------
-#par(mfrow=c(1,2))
-#Plot figure
+#------------------------------------------------------------------------------------------
 
 matplot(x=times,y=out,
         type="l",
@@ -461,7 +459,7 @@ legend(x=100,y=0.6,
 
 
 
-
+plot(out$time, out$S)
 
 
 

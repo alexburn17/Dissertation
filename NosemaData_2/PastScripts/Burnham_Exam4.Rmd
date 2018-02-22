@@ -1,0 +1,84 @@
+---
+title: "Burnham_Exam_3"
+author: "P. Alexander Burnham"
+date: "April 12, 2016"
+output: html_document
+---
+
+**EXAM 3**
+
+1a.
+```{r}
+
+z<-rbeta(n=1000,shape1 =220, shape2 = 93)
+hist(z,breaks=seq(0,1,length=500))
+```
+
+1b.
+
+```{r}
+qbeta(p=c(0.025,0.975),shape1=220, shape2 = 93)
+
+```
+
+1c.
+```{r}
+y<-sample(z,100)
+hist(y)
+```
+
+1d.
+
+```{r}
+z<-rbeta(n=100,shape1 =220, shape2 = 93)
+
+qbeta(p=c(0.025,0.975),shape1=220, shape2 = 93)
+```
+
+
+2a.
+
+```{r}
+Low<-rnorm(n=5, mean=4.5, sd=1)
+Medium<-rnorm(n=5, mean=3.5, sd=1)
+High<-rnorm(n=5, mean=7.5, sd=1)
+Data <- c(Low,Medium,High)
+```
+
+2b.
+
+```{r}
+
+Treatment <- c("Low","Low","Low","Low","Low","Medium","Medium","Medium","Medium","Medium","High","High","High","High","High")
+Treatment<-factor(Treatment)
+
+DF<-data.frame(cbind(Treatment,Data))
+head(DF)
+
+```
+2c.
+```{r}
+
+Model<-aov(DF$Data~DF$Treatment,data=DF) 
+summary(Model)
+
+```
+2d.
+```{r}
+boxplot(DF$Data~DF$Treatment,data=DF)
+```
+3a.completed as a text file:
+
+3b.
+```{r}
+
+DF<-read.table("Burnham_Data.csv",header=TRUE,sep=",",stringsAsFactors=FALSE)
+
+
+plot(DF$VarX,DF$VarY)
+
+Model<-lm(DF$VarX~DF$VarY,data=DF)
+abline(Model, col = "blue", lwd=3)
+summary(Model)
+
+```

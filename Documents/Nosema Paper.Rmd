@@ -1,5 +1,7 @@
 ---
-output: pdf_document
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 $$\text{Nosema at large: A survey and epidemiological model of a microsporidan parasite in Vermont bumble bees}$$
@@ -33,77 +35,10 @@ In order to assay each bee for *Nosema*, the ventriculus was dissected from the 
 These data were analyzed in R using a contingency table and a Pearson's Chi-squared test. Tables of the independent variables (species, caste and honeybee proximity) by the presences/absences Nosema data (binary) were created. Infected and uninfected vectors were created and bound into a matrix using the function, "rbind()". The tests were performed using the "chi.sq()" function and mosaic plots were created using the "mosaicplot()" function.
 
 
-```{r, results="hide",fig.keep='none'}
-setwd("~/Desktop/NosemaData_2")
-
-NosemaDF <- read.table("Nosema_Data_R.csv",
-                       header=TRUE,
-                       row.names=1,sep=",",
-                       stringsAsFactors=FALSE)
-
-attach(NosemaDF)
-library(RColorBrewer)
-
-CasteTab <- table(Caste,NosemaPA)
-Infected<-CasteTab[,2]
-Uninfected<-CasteTab[,1]
-data <- rbind(Infected,Uninfected)
-rownames(data) <- c("Infected", "Uninfected")
-colnames(data) <- c("Males", "Queens", "Workers")
-
-colors<-colorRampPalette(brewer.pal(9,"Blues"))(3)
-
-print(chisq.test(data))
-
-mosaicplot(data,col=colors,
-           shade=FALSE,
-           main="Prevalence of Nosema by Caste",
-           ylab = "Caste")
-```
-
-
-```{r, include=FALSE}
-SpeciesTab <- table(Species,NosemaPA)
-SpeciesTab <- SpeciesTab[-3,]
-SpeciesTab <- SpeciesTab[-3,]
-SpeciesTab <- SpeciesTab[-5,]
-Infected<-SpeciesTab[,2]
-Uninfected<-SpeciesTab[,1]
-data1 <- rbind(Infected,Uninfected)
-rownames(data1) <- c("Infected", "Uninfected")
-colnames(data1) <- c("bimac.", "bor.", "imp.", "tern.", "vag.")
-
-colors1<-colorRampPalette(brewer.pal(9,"Blues"))(5)
-
-print(chisq.test(data1))
-mosaicplot(data1,col=colors1,shade=FALSE,
-           main="Prevalence of Nosema by Species",
-           ylab = "Nosema Spp.")
-```
-
-
-```{r, include=FALSE}
-hbTab <- table(hbPA,NosemaPA)
-Infected<-hbTab[,2]
-Uninfected<-hbTab[,1]
-data2 <- rbind(Infected,Uninfected)
-rownames(data2) <- c("Infected", "Uninfected")
-colnames(data2) <- c("Near", "Far")
-
-colors2<-colorRampPalette(brewer.pal(9,"Blues"))(2)
-
-print(chisq.test(data2))
-mosaicplot(data2,col=colors2,
-           shade=FALSE, 
-           main="Prevalence of Nosema by Honeybee Proximity",
-           ylab = "Honeybee Proximity")
-
-```
-
 
 >**Epidemiological Modeling:** 
 
-![alt text](http://i966.photobucket.com/albums/ae147/alexburn17/CE10_zpstajjl7j3.png)
+
 Figure 1:   The beta and gamma terms were derived from the empirical data of the survey. Beta is the conversion rate from susceptible to infected. Gamma is the conversion rate from infected to critically infected (diseased state). Beta=(#infected/total#), gamma=(#critically infected/#infected). The death rates (muA and muB), fecal deposition rates (alpha1 and alpha2) were estimated, as was the initial rate of infection (I1).
 
 
@@ -131,189 +66,6 @@ This model describes the dynamics in this parasite system. Parameters were calcu
 
 The equations were solved using an R package called “deSolve”. This eliminated the need for for-loops. Vectors for initial values and parameters were created and a time sequence of 150 days was set up to replicate the period that bumble bees are active in a temperate climate. The infected and critically infected vectors were subtracted from 1 to represent the susceptible population. These vectors were bound in a matrix and plotted using "matplot()".
 
-```{r, results="hide",,fig.keep='none'}
-# Nosema Model MKIV (28 April 2016)
-#----------------------------------------------------------------------
-
-
-# Parameters:
-# dSdt = -[S][P]beta-[S]muA
-# dI1dt = [S][P]beta-[I1]muA-[I1]gamma
-# dI2dt = -[I1][P]gamma-[I2]muB
-# dPdt = [I1]alpha1 + [I2]alpha2-[P]theta
-# S = Initial Bombus Population on landscape
-# I1 = Portion of Bombus infected
-# I2 = Portion of Infected that are critically infected
-# P = Population of fecal matter on landscape (mL)
-# beta = rate of conversion from S to I1
-# alpha1 = rate of fecal deposition from I1 to P (mL)
-# alpha2 = rate of fecal deposition from I2 to P (mL)
-# theta = decay of P (mL)
-# gamma = rate of conversion from I1 to I2
-# muA = natural death rate of S and I1
-# muB = death rate of critically infected
-# time = time (days)
-
-
-#------------------------------------------------------------------------
-
-# Preliminaries: 
-
-library(deSolve)
-
-# create a function using desolve
-NosemaModel2 <- function(t, state, parameters){
-  with(as.list(c(state, parameters)), {
-    
-    dSdt <- -(S * P * beta) - (S * muA) 
-    dI1dt <- (S * P * beta) - (I1 * muA) - (I1 * gamma) 
-    dI2dt <- (I1 * P * gamma) - (I2 * muB)
-    dPdt <- (I1 * alpha1) + (I2 * alpha2) - (P * theta) 
-    
-    
-    return(list(c(dSdt,dI1dt,dI2dt,dPdt)))
-  })
-}
-
-# set parameters
-state<-c(S=1, I1=0.05, I2=0.00, P=0.0)
-parameters <- c(
-  beta=0.202,
-  alpha1=0.07,
-  alpha2=0.010,
-  gamma=0.05,
-  muA=0.011,
-  muB=0.025,
-  theta=0.01
-)
-
-# set up time steps
-times <- seq(0,150,by=1)
-
-#Subset data and remove time
-out <- ode(y=state,times=times, func=NosemaModel2, parms=parameters)
-out<-as.data.frame(out)
-out$time <- NULL
-out$S <- NULL
-NosemaLS <- out
-NosemaLS <- (NosemaLS[,3])
-out$P <- NULL
-Surv <- 1 - (out[,1]+out[,2])
-out <- cbind(out,Surv)
-
-#Plot figure
-matplot(x=times,y=out,
-        type="l",
-        xlab="Time (days)", 
-        ylab="Rate of Nosema Infection", 
-       # main="Infection Rate through Time",
-        lwd=3,
-        ylim=c(0,1),
-        lty=1,
-        font.lab=2,
-        bty="l", 
-        col=c("blue","red", "green"))
-
-grid(col="black")
-
-legend(x=68,y=0.6,
-       legend=c("Infected",
-                "Critically Infected",
-                "Susceptable"),
-       pch=19,
-       col=c("blue","red", "green"),
-       bty="n",
-       bg="white")
-```
-
-
-
-```{r, include=FALSE}
-# create a function using desolve
-NosemaModel2 <- function(t, state, parameters){
-  with(as.list(c(state, parameters)), {
-    
-    dSdt <- -(S * P * beta) - (S * muA) 
-    dI1dt <- (S * P * beta) - (I1 * muA) - (I1 * gamma) 
-    dI2dt <- (I1 * P * gamma) - (I2 * muB)
-    dPdt <- (I1 * alpha1) + (I2 * alpha2) - (P * theta) 
-    
-    
-    return(list(c(dSdt,dI1dt,dI2dt,dPdt)))
-  })
-}
-
-# set parameters
-state<-c(S=1, I1=0.01, I2=0.00, P=0.0)
-parameters <- c(
-  beta=0.202,
-  alpha1=0.07,
-  alpha2=0.010,
-  gamma=0.05,
-  muA=0.011,
-  muB=0.025,
-  theta=0.01
-)
-
-# set up time steps
-times <- seq(0,150,by=1)
-
-#Subset data and remove time
-out1 <- ode(y=state,times=times, func=NosemaModel2, parms=parameters)
-out1<-as.data.frame(out1)
-out1$time <- NULL
-out1$S <- NULL
-NosemaLS <- out1
-NosemaLS <- (NosemaLS[,3])
-out1$P <- NULL
-Surv <- 1 - (out1[,1]+out1[,2])
-out1 <- cbind(out1,Surv)
-
-```
-
-```{r, include=FALSE}
-# create a function using desolve
-NosemaModel2 <- function(t, state, parameters){
-  with(as.list(c(state, parameters)), {
-    
-    dSdt <- -(S * P * beta) - (S * muA) 
-    dI1dt <- (S * P * beta) - (I1 * muA) - (I1 * gamma) 
-    dI2dt <- (I1 * P * gamma) - (I2 * muB)
-    dPdt <- (I1 * alpha1) + (I2 * alpha2) - (P * theta) 
-    
-    
-    return(list(c(dSdt,dI1dt,dI2dt,dPdt)))
-  })
-}
-
-# set parameters
-state<-c(S=1, I1=0.10, I2=0.00, P=0.0)
-parameters <- c(
-  beta=0.202,
-  alpha1=0.07,
-  alpha2=0.010,
-  gamma=0.05,
-  muA=0.011,
-  muB=0.025,
-  theta=0.01
-)
-
-# set up time steps
-times <- seq(0,150,by=1)
-
-#Subset data and remove time
-out2 <- ode(y=state,times=times, func=NosemaModel2, parms=parameters)
-out2<-as.data.frame(out2)
-out2$time <- NULL
-out2$S <- NULL
-NosemaLS <- out2
-NosemaLS <- (NosemaLS[,3])
-out2$P <- NULL
-Surv <- 1 - (out2[,1]+out2[,2])
-out2 <- cbind(out2,Surv)
-
-```
-
 
 **RESULTS:**
 
@@ -328,32 +80,12 @@ The prevalence of *Nosema* was found to be 20.2% across all species and castes. 
 
 
 
-
-```{r, echo=FALSE}
-mosaicplot(data1,col=colors1,shade=FALSE,
-           main="Prevalence of Nosema by Species",
-           ylab = "Bombus spp.")
-```
-
 Figure 2:     The prevalence of *Nosema* (binary variable) plotted against the five most common *Bombus spp.* in this data set (*B. bimaculatus, B. borealis, B. impatiens, B. ternarius and B. vagans*). This mosaic plot shows the infected and uninfected proportions of each species of bumble bee. A Chi-squared test yielded and insignificant p-value (p=0.299) indicating no difference between species.
 
-
-```{r, echo=FALSE}
-mosaicplot(data,col=colors,
-           shade=FALSE,
-           main="Prevalence of Nosema by Caste",
-           ylab = "Caste")
-```
 
 Figure 3:     The prevalence of *Nosema* (binary variable) plotted against the three castes (males, queens and workers). This mosaic plot shows the infected and uninfected proportions of bees in each caste. A Chi-squared test yielded and insignificant p-value (p=0.468) indicating no difference between castes.
 
 
-```{r, echo=FALSE}
-mosaicplot(data2,col=colors2,
-           shade=FALSE, 
-           main="Prevalence of Nosema by Honeybee Proximity",
-           ylab = "Honeybee Proximity")
-```
 Figure 4:     The prevalence of *Nosema* (binary variable) plotted against the honeybee proximity (near an apiary/far from an apiary). mosaic plot shows the infected and uninfected proportions of bees near and far from an apiary. A Chi-squared test yielded and insignificant p-value (p=0.481) indicating no difference in parasite prevalence due to honeybee proximity.
 
 >**Epidemiological Modeling** 
@@ -364,95 +96,9 @@ The model recreated the dynamics at play within this system. The relationship be
 
 
 
-
-```{r, echo=FALSE}
-
-#Plot figure
-matplot(x=times,y=out,
-        type="l",
-        xlab="Time (days)", 
-        ylab="Rate of Nosema Infection", 
-       # main="Infection Rate through Time",
-        lwd=3,
-        ylim=c(0,1),
-        lty=1,
-        font.lab=2,
-        bty="l", 
-        col=c("blue","red", "green"))
-
-grid(col="black")
-
-legend(x=68,y=0.6,
-       legend=c("Infected",
-                "Critically Infected",
-                "Susceptable"),
-       pch=19,
-       col=c("blue","red", "green"),
-       bty="n",
-       bg="white")
-
-```
-
 Figure 5: The infection rate through time beginning in the early spring and ending in the early fall. The susceptible population is shown in green and the infection rate in blue. The critically infected (diseased state) rate is shown in red. The parameters for this model are: beta=0.202 (data), gamma=0.05 (data), I1=0.05 (estimated).
 
 
-
-
-
-
-
-```{r, echo=FALSE}
-
-par(mfrow=c(1,2))
-#Plot figure
-matplot(x=times,y=out1,
-        type="l",
-        xlab="Time (days)", 
-        ylab="Rate of Nosema Infection", 
-       # main="Infection Rate through Time",
-        lwd=3,
-        ylim=c(0,1),
-        lty=1,
-        font.lab=2,
-        bty="l", 
-        col=c("blue","red", "green"))
-
-grid(col="black")
-
-legend(x=10,y=0.6,
-       legend=c("Infected",
-                "Critically Infected",
-                "Susceptable"),
-       pch=19,
-       col=c("blue","red", "green"),
-       bty="n",
-       bg="white")
-
-#Plot figure
-matplot(x=times,y=out2,
-        type="l",
-        xlab="Time (days)", 
-        ylab="Rate of Nosema Infection", 
-       # main="Infection Rate through Time",
-        lwd=3,
-        ylim=c(0,1),
-        lty=1,
-        font.lab=2,
-        bty="l", 
-        col=c("blue","red", "green"))
-
-grid(col="black")
-
-legend(x=10,y=0.6,
-       legend=c("Infected",
-                "Critically Infected",
-                "Susceptable"),
-       pch=19,
-       col=c("blue","red", "green"),
-       bty="n",
-       bg="white")
-
-```
 Figure 6: The infection rate through time beginning in the early spring and ending in the early fall. The susceptible population is shown in green and the infection rate in blue. The critically infected (diseased state) rate is shown in red. The parameters are set to: beta=0.202 (data), gamma=0.05 (data). I1 (initial infection rate) is being changed from lower value (0.01) on the right to a higher value (0.10) on the left. The higher value results in a higher rate of infection that occurs earlier in the year.
 
 

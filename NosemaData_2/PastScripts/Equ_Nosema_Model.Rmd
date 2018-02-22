@@ -1,0 +1,12 @@
+---
+output: pdf_document
+---
+
+
+$$ \frac{dS}{dt} = {-S}{P}{\beta} - {S}{\mu_A} $$
+$$ \frac{dI_1}{dt} = {S}{P}{\beta} - {I_1}{\mu_A} - {I_1}{\gamma} $$
+$$ \frac{dI_2}{dt} = {I_1}{P}{\gamma} - {I_2}{\mu_B} $$
+$$ \frac{dP_1}{dt} = {I_1}{\alpha_1}+ {I_2}{\alpha_2} - {P}{\theta} $$
+
+
+  
