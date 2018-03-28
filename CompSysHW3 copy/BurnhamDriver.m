@@ -1,0 +1,326 @@
+% Driver to conduct paramter sweeps, SIR plots and statatistical analysis
+% on how different values of I, a and p affect the rate Infection of the
+% bumble bee parasite Nosema bombi
+% By P. Alexander Burnham
+% March 26, 2018
+
+
+clearvars
+
+%% PARAMTER SWEEP: PLOT PROPORTION OF INFECTED FOR N RUNS for IMMIGRATION:
+
+% number of runs per paramter value
+n = 1; 
+% vector of paramter values (i)
+immigration_rate_vec = [0, 0.001, 0.01, 0.1];
+% call to Immegration function (calls model)
+I_mat = Immigration(immigration_rate_vec, n);
+
+
+% create a linear x axis substitute and split the matrix to
+% into a Infected matrix and susceptable matrix
+x = [1,2,3,4];
+I_matINF=I_mat(1:4,:);
+I_matSUS=I_mat(5:8,:);
+
+errorbar(x, I_matINF(:,1), I_matINF(:,2), 'LineWidth',2); hold on;
+errorbar(x, I_matSUS(:,1), I_matSUS(:,2), 'LineWidth',2); 
+
+% change the tick values to correct param values
+xticks([1 2 3 4]) 
+xticklabels({'0','0.001','0.01','0.1'})
+% change the font size
+set(gca,'fontsize',18)
+% add labels and a legend
+ylabel('mean Proportion of individuals')
+xlabel('Immigration Rate (i)')
+lgd=legend('Infected', 'Susceptable');
+title(lgd,'Disease State:')
+% add a title with param values:
+title("death=30, duration=7, p=0.15, time=150")
+
+
+
+
+%% PARAMTER SWEEP: PLOT PROPORTION OF INFECTED FOR N RUNS for PROBABILITY:
+
+% number of runs per paramter value
+n = 1; 
+% vector of paramter values (a)
+probability_vec = [.1,.2,.3,.4];
+% call to Probabilty function (calls model)
+P_mat = Probability(probability_vec, n);
+
+
+% create a linear x axis substitute and split the matrix to
+% into a Infected matrix and susceptable matrix
+x = [1,2,3,4];
+P_matINF=P_mat(1:4,:);
+P_matSUS=P_mat(5:8,:);
+
+errorbar(x, P_matINF(:,1), P_matINF(:,2), 'LineWidth',2); hold on;
+errorbar(x, P_matSUS(:,1), P_matSUS(:,2), 'LineWidth',2); 
+
+% change the tick values to correct param values
+xticks([1 2 3 4]) 
+xticklabels({'0.1','0.2','0.3','0.4'})
+% change the font size
+set(gca,'fontsize',18)
+% add labels and a legend
+ylabel('mean Proportion of individuals')
+xlabel('Probability of Infection (p)')
+lgd=legend('Infected', 'Susceptable');
+title(lgd,'Disease State:')
+% add a title with param values:
+title("death=30, duration=7, i=0, time=150")
+
+
+
+
+
+
+%% PARAMTER SWEEP: PLOT PROPORTION OF INFECTED FOR N RUNS for DURATION:
+
+% number of runs per paramter value
+n = 1; 
+% vector of paramter values (a)
+duration_vec = [4,6,8,10];
+% call to Duration function (calls model)
+D_mat = Duration(duration_vec, n);
+
+
+% create a linear x axis substitute and split the matrix to
+% into a Infected matrix and susceptable matrix
+x = [1,2,3,4];
+D_matINF=D_mat(1:4,:);
+D_matSUS=D_mat(5:8,:);
+
+errorbar(x, D_matINF(:,1), D_matINF(:,2), 'LineWidth',2); hold on;
+errorbar(x, D_matSUS(:,1), D_matSUS(:,2), 'LineWidth',2); 
+
+% change the tick values to correct param values
+xticks([1 2 3 4]) 
+xticklabels({'2','6','8','10'})
+% change the font size
+set(gca,'fontsize',18)
+% add labels and a legend
+ylabel('mean Proportion of individuals')
+xlabel('Duration (a)')
+lgd=legend('Infected', 'Susceptable');
+title(lgd,'Disease State:')
+% add a title with param values:
+title("death=30, i=0, p=0.15, time=150")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%% SIR model plot non-HB (no spillover):
+random = 1;
+initmap = 0;
+dim=100;
+maxt= 150;
+p = .15;
+a=7;
+g=30;
+method = 'synchronous';
+immigration_rate = 0.000;
+
+% call to model:
+[SIR]=greenbergHastingsStarter(dim,a,g, maxt, p, method, immigration_rate, initmap, random);
+
+% creating proportion variables for plotting
+Infected = SIR(1,:)./(SIR(1,:) + SIR(2,:));
+Susceptable = SIR(2,:)./(SIR(1,:) + SIR(2,:));
+
+% plot proportion values
+figure;
+plot(1:maxt, Infected,"r", 1:maxt, Susceptable,"b",...
+'LineWidth',2);
+% change the font size
+set(gca,'fontsize',15)
+% add labels and a legend
+ylabel('Precent of Population')
+xlabel('Time (days)')
+lgd=legend('Infected','Susceptable');
+title(lgd,'Disease State:')
+title("death=30, duration=7, i=0, p=0.15, time=150")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%% SIR model plot HB present (spillover):
+random = 1;
+initmap = 0;
+dim=100;
+maxt= 150;
+p = .15;
+a=7;
+g=30;
+method = 'synchronous';
+immigration_rate = 0.003;
+
+% call to model:
+[SIR]=greenbergHastingsStarter(dim,a,g, maxt, p, method, immigration_rate, initmap, random);
+
+% creating proportion variables for plotting
+Infected = SIR(1,:)./(SIR(1,:) + SIR(2,:));
+Susceptable = SIR(2,:)./(SIR(1,:) + SIR(2,:));
+
+% plot proportion values
+figure;
+plot(1:maxt, Infected,"r", 1:maxt, Susceptable,"b",...
+'LineWidth',2);
+% change the font size
+set(gca,'fontsize',15)
+% add labels and a legend
+ylabel('Precent of Population')
+xlabel('Time (days)')
+lgd=legend('Infected','Susceptable');
+title(lgd,'Disease State:')
+title("death=30, duration=7, i=0.003, p=0.15, time=150")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%% SIR model for statistical analysis (no spillover):
+random = 1;
+initmap = 0;
+dim=100;
+maxt= 150;
+p = .15;
+a=7;
+g=30;
+method = 'synchronous';
+immigration_rate = 0.000;
+n=1;
+
+% create preallocated vector of length n
+Infected_test = zeros(n,1);
+
+% call to model n times:
+for i=1:n  
+[SIR]=greenbergHastingsStarter(dim,a,g, maxt, p, method, immigration_rate, initmap, random);
+Infected_test(i) = mean(SIR(1,:));
+end
+
+
+
+
+
+%% SIR model for statistical analysis (low spillover):
+random = 1;
+initmap = 0;
+dim=100;
+maxt= 150;
+p = .15;
+a=7;
+g=30;
+method = 'synchronous';
+immigration_rate = 0.001;
+n=1;
+
+% create preallocated vector of length n
+Infected_test_spilloverLow = zeros(n,1);
+
+% call to model n times:
+for i=1:n  
+[SIR]=greenbergHastingsStarter(dim,a,g, maxt, p, method, immigration_rate, initmap, random);
+Infected_test_spilloverLow(i) = mean(SIR(1,:));
+end
+
+
+
+
+%% SIR model for statistical analysis (high spillover):
+random = 1;
+initmap = 0;
+dim=100;
+maxt= 150;
+p = .15;
+a=7;
+g=30;
+method = 'synchronous';
+immigration_rate = 0.003;
+n=1;
+
+% create preallocated vector of length n
+Infected_test_spillover = zeros(n,1);
+
+% call to model n times:
+for i=1:n  
+[SIR]=greenbergHastingsStarter(dim,a,g, maxt, p, method, immigration_rate, initmap, random);
+Infected_test_spillover(i) = mean(SIR(1,:));
+end
+
+
+%% Statistical Analysis and Plotting of Spillover vs no Spillover:
+
+% anova and posthoc test comparing no low and high spillover 
+% first create y var of averages and yVar catagorical factors
+yVar = [Infected_test; Infected_test_spilloverLow; Infected_test_spillover];
+xVar = [repmat('NS', n, 1); repmat('LS', n, 1); repmat('HS', n, 1)];
+
+% perform anova and posthoc test
+[p,tbl, stats]=anova1(yVar, xVar);
+[c] = multcompare(stats);
+
+% calculate mean and std for each treamtent then plot with error bars
+mean_number = [mean(Infected_test), mean(Infected_test_spilloverLow), mean(Infected_test_spillover)]; % mean 
+std_number = [std(Infected_test), std(Infected_test_spilloverLow), std(Infected_test_spillover)];  % standard deviation 
+figure
+hold on
+bar(1:3,mean_number)
+errorbar(1:3,mean_number,std_number,'.')
+set(gca,'fontsize',13)
+xticks([1 2 3]) 
+xticklabels({'No Spillover', 'Low Spillover', 'High Spillover'})
+% add labels 
+ylabel('mean # infected individuals')
+xlabel('Treatment')
+title("death=30, duration=7, p=0.15, time=150")
+
+
+
+

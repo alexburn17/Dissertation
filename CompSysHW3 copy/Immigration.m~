@@ -1,0 +1,71 @@
+function [I_mat]=Immigration(immigration_rate_vec, n)
+%
+% DESCRIPTION: returns a matrix that includes the means and standard
+% deveviations for the model runs for with a sample size of n
+% 
+% INPUTS:
+% immigration_rate_vec is a vecotor or immigration param values
+% n is the number of model runs
+%
+% OUTPUTS:
+% I_mat is a matrix of means and standard deviations for n runs 
+%
+% standard paramaters that do not change in this model:
+random = 1;
+initmap = 0;
+dim=50;
+maxt= 50;
+p = .2;
+a=3;
+g=3;
+method = 'synchronous';
+
+
+for i=1:n
+% take first value from passed param list and use in model    
+immigration_rate = immigration_rate_vec(1);
+[SIR]=greenbergHastingsStarter(dim,a,g, maxt, p, method, immigration_rate, initmap, random);
+
+% store the means for infected and susceptable in vecotors of length n
+INF_I1(i) = mean(SIR(1,:));
+SUS_I1(i) = mean(SIR(2,:));
+
+immigration_rate = immigration_rate_vec(2);
+[SIR]=greenbergHastingsStarter(dim,a,g, maxt, p, method, immigration_rate, initmap, random);
+% store the means for infected and susceptable in vecotors of length n
+INF_I2(i) = mean(SIR(1,:));
+SUS_I2(i) = mean(SIR(2,:));
+
+immigration_rate = immigration_rate_vec(3);
+[SIR]=greenbergHastingsStarter(dim,a,g, maxt, p, method, immigration_rate, initmap, random);
+% store the means for infected and susceptable in vecotors of length n
+INF_I3(i) = mean(SIR(1,:));
+SUS_I3(i) = mean(SIR(2,:));
+
+immigration_rate = immigration_rate_vec(4);
+[SIR]=greenbergHastingsStarter(dim,a,g, maxt, p, method, immigration_rate, initmap, random);
+% store the means for infected and susceptable in vecotors of length n
+INF_I4(i) = mean(SIR(1,:));
+SUS_I4(i) = mean(SIR(2,:));
+
+end
+
+% create a matrix of all vectors
+I_mat = [INF_I1; INF_I2; INF_I3; INF_I4; SUS_I1; SUS_I2; SUS_I3; SUS_I4];
+
+% find the mean, standard deviation and create a catagory variable for 
+% infected (1) or suscetalbe (0) and merge into one output matrix. along
+% with the x value (immegration rate vec)
+mn = mean(I_mat, 2);
+st = std(I_mat, 0, 2);
+cat = [1,1,1,1,0,0,0,0];
+cat = cat';
+xval = [immigration_rate_vec, immigration_rate_vec];
+xval = xval';
+
+% final output matrix
+I_mat = [mn st cat, xval];
+
+
+end
+

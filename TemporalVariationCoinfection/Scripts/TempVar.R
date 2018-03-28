@@ -202,12 +202,14 @@ resultList <- lapply(namesList, TempVarFunc, data=TempVar)
 
 
 ###############################################################################################
+library("MuMIn")
 
 # model of loBQCV by varroa load using a gamma distribution:
 Full <- lmer(data = TempVar, formula = logBQCV ~ VarroaLoad * SamplingEvent + (1|labID) + (SamplingEvent|Yard))
 
 # running an anova on the model for determining significance:
 Anova(Full)
+r.squaredGLMM(Full)
 
 
 
@@ -234,6 +236,7 @@ Full1 <- lmer(data = TempVar, formula = logBQCV ~ VarroaLoad + (1|labID) + (Samp
 # running an anova on the model for determining significance:
 Anova(Full1)
 
+r.squaredGLMM(Full1)
 
 
 ###############################################################################################
