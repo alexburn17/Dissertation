@@ -1,0 +1,104 @@
+site,ID,spp,sampleType,gramsUsed,Exp
+JOSH,P68,bee balm,hb,0.88,Survey
+SAND,P69,red clover,random,1.5,Survey
+ROCK,P70,white clover,random,1.5,Survey
+BOST,P71,red clover,random,1.5,Survey
+JOSH,P72,red clover,random,1.5,Survey
+ROCK,P73,red clover,random,1.5,Survey
+BOST,P74,red clover,hb,1.5,Survey
+ROCK,P75,white clover,hb,1.5,Survey
+SWAN,P76,red clover,hb,1.5,Survey
+MART,P77,milkweed,hb,1.5,Survey
+FLAN,P78,crown vetch,random,1.5,Survey
+COL,P79,cow vetch,random,1.5,Survey
+COL,P80,red clover,random,1.5,Survey
+MART,P81,cow vetch,random,1.5,Survey
+TIRE,P82,red clover,random,1.5,Survey
+SIND,P83,white clover,hb,1.5,Survey
+HOGB,P84,red clover,random,1.5,Survey
+JOSH,P85,bee balm,random,1.11,Survey
+SWAN,P86,red clover,random,1.5,Survey
+FLAN,P87,crown vetch,hb,1.5,Survey
+HOGB,P88,red clover,hb,1.5,Survey
+WHAL,P89,purple loosestrife,random,1.5,Survey
+CIND,P90,white clover,random,1.5,Survey
+FERL,P91,st. john's wort,random,1.5,Survey
+MART,P92,milkweed,random,1.5,Survey
+FERL,P93,cow vetch,random,1.5,Survey
+NEK,P94,spotted jewel weed,random,1.5,Survey
+MUDGE,P95,crown vetch,hb,1.5,Survey
+ONE,P96,st. john's wort,hb,1.5,Survey
+RICE,P97,clammy ground cherry,random,1.5,Survey
+NEK,P98,mint,random,1.5,Survey
+RICE,P99,cow vetch,random,1.5,Survey
+MART,P100,cow vetch,hb,1.5,Survey
+MUDGE,P101,crown vetch,random,1.5,Survey
+ONE,P102,st. john's wort,random,1.5,Survey
+WHAL,P103,white flowers,random,1.5,Survey
+Court,P2,RC,acute,1.5,PlantTrans
+Court,P5,RC,acute,1.5,PlantTrans
+Court,P8,RC,acute,1.5,PlantTrans
+Court,P13,RC,acute,1.5,PlantTrans
+Court,P34,RC,acute,1.5,PlantTrans
+Court,P46,RC,acute,1.5,PlantTrans
+Court,P3,BFT,acute,1.5,PlantTrans
+Court,P6,BFT,acute,1.5,PlantTrans
+Court,P16,BFT,acute,1.5,PlantTrans
+Court,P17,BFT,acute,1.5,PlantTrans
+Court,P19,BFT,acute,1.5,PlantTrans
+Court,P39,BFT,acute,1.5,PlantTrans
+Court,P4,WC,acute,1.5,PlantTrans
+Court,P12,WC,acute,1.5,PlantTrans
+Court,P14,WC,acute,1.5,PlantTrans
+Court,P27,WC,acute,1.5,PlantTrans
+Court,P36,WC,acute,1.5,PlantTrans
+Court,P45,WC,acute,1.5,PlantTrans
+Court,P1,WC,chronic-1,1.5,PlantTrans
+Court,P7,WC,chronic-1,1.5,PlantTrans
+Court,P15,WC,chronic-1,1.5,PlantTrans
+Court,P26,WC,chronic-1,1.5,PlantTrans
+Court,P40,WC,chronic-1,1.5,PlantTrans
+Court,P44,WC,chronic-1,1.5,PlantTrans
+Court,P49,BFT,PRE,1.5,PlantTrans
+Court,P47,RC,PRE,1.5,PlantTrans
+Court,P28,WC,chronic-2,1.5,PlantTrans
+Court,P31,WC,chronic-2,1.5,PlantTrans
+Court,P33,WC,chronic-2,1.5,PlantTrans
+Court,P35,WC,chronic-2,1.5,PlantTrans
+Court,P37,WC,chronic-2,1.5,PlantTrans
+Court,P43,WC,chronic-2,1.5,PlantTrans
+Court,P48,WC,PRE,1.5,PlantTrans
+Court,P23,WC,chronic-3,1.5,PlantTrans
+Court,P30,WC,chronic-3,1.5,PlantTrans
+Court,P32,WC,chronic-3,1.5,PlantTrans
+Court,P38,WC,chronic-3,1.5,PlantTrans
+Court,P41,WC,chronic-3,1.5,PlantTrans
+Court,P42,WC,chronic-3,1.5,PlantTrans
+Court,P58,BFT,diversity,1.5,PlantTrans
+Court,P59,BFT,diversity,1.5,PlantTrans
+Court,P60,BFT,diversity,1.5,PlantTrans
+Court,P62,BFT,diversity,1.5,PlantTrans
+Court,P64,BFT,diversity,1.5,PlantTrans
+Court,P66,BFT,diversity,1.5,PlantTrans
+Court,P50,RC,diversity,1.5,PlantTrans
+Court,P52,RC,diversity,1.5,PlantTrans
+Court,P53,RC,diversity,1.5,PlantTrans
+Court,P55,RC,diversity,1.5,PlantTrans
+Court,P63,RC,diversity,1.5,PlantTrans
+Court,P67,RC,diversity,1.5,PlantTrans
+Court,P51,WC,diversity,1.5,PlantTrans
+Court,P54,WC,diversity,1.5,PlantTrans
+Court,P56,WC,diversity,1.5,PlantTrans
+Court,P57,WC,diversity,1.5,PlantTrans
+Court,P61,WC,diversity,1.5,PlantTrans
+Court,P65,WC,diversity,1.5,PlantTrans
+Court,P18,WC,comingle,1.5,PlantTrans
+Court,P20,WC,comingle,1.5,PlantTrans
+Court,P21,WC,comingle,1.5,PlantTrans
+Court,P24,WC,comingle,1.5,PlantTrans
+Court,P25,WC,comingle,1.5,PlantTrans
+Court,P29,WC,comingle,1.5,PlantTrans
+Court,P10,WC,comingle,1.5,PlantTrans
+Court,P11,WC,comingle,1.5,PlantTrans
+Court,P9,WC,comingle,1.5,PlantTrans
+Court,P22,WC,comingle,1.5,PlantTrans
