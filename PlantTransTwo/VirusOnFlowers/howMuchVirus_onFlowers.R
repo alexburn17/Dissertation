@@ -10,7 +10,8 @@
 rm(list=ls())
 
 # Set Working Directory: 
-setwd("~/Dissertation/PlantTransTwo/VirusOnFlowers")
+# setwd("~/Dissertation/PlantTransTwo/VirusOnFlowers") Sam Working Dirrectory 
+setwd("~/Documents/GitHub/Dissertation/PlantTransTwo/VirusOnFlowers")
 
 ###########################################################################################
 # Read in Virus Data:
@@ -55,7 +56,7 @@ PrelimClean <- function(data=ImidVirus){
 # END OF FUNCITON
 ###########################################################################
 
-# cean virus data set:
+# clean virus data set:
 PlantVir <- PrelimClean(PlantVir)
 
 # merge eco data and dilution factors
@@ -134,13 +135,13 @@ CT_Threash <- function(data=data){
 ###########################################################################
 
 
-# removed errant lodas below limit of detection:
-dataFrame2 <- CT_Threash(dataFrame2)
+# removed loads below limit of detection:
+# dataFrame2 <- CT_Threash(dataFrame2)
 
-
+dat <- dataFrame2
 
 # Read in Virus Data:
-dat <- read.csv("CleanPlantVirus.csv", header=TRUE, stringsAsFactors = FALSE) 
+#dat <- read.csv("CleanPlantVirus.csv", header=TRUE, stringsAsFactors = FALSE) 
 
 # only positive values:
 datPos <- dat[!dat$genomeCopy==0,]
@@ -174,3 +175,8 @@ plot1 <- ggplot(expPlot, aes(x=Exp, y=mean, fill=colors)) +
 
 plot1 + theme_minimal(base_size = 17) + theme(legend.position=c(2, 2)) + scale_fill_manual(values=colors)
 
+
+
+# print plant trans viral load data:
+print(datTransPos)
+#write.csv(datTransPos, "datTransPos.csv")
