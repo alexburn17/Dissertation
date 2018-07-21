@@ -27,20 +27,13 @@ probBBdeathINF <- 1 # infected susceptable bumble bee death rate
 TimeSteps <- 50 # number of time steps
 #____________________________________________________________________
 
+require(RColorBrewer)
+
+cols <- colorRampPalette(brewer.pal(5, "Blues"))(6)
+colsINF <- colorRampPalette(brewer.pal(5, "Reds"))(6)
 # vector of colors for each state:
-cols <- c(
-  '0' = "white", # empty space
-  '1' = "yellow", # honeybees
-  '2' = "orange", # bumblebees
-  '3' = "black", # honeybee colonies
-  '4' = "grey", # bumblebee colonies
-  '5' = "red", # flowers 
-  '6' = "blue", # infected HB
-  '7' = "pink", # infected BB
-  '8' = "green", # infected flowers
-  '9' = "darkviolet", # infected HB colonies
-  '10' = "aquamarine" # infected BB colonies
-)
+cols <- c("white", cols[2:6], colsINF[2:6])
+
 
 # initialize random matrix with starting proportions of HB, BB colonies, and flowers:
 beeVec <-sample(0:10, xDim*yDim, replace=T, prob = c(0.8, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02))
@@ -207,7 +200,7 @@ my_command <- 'convert *.png -delay 3 -loop 0 animation.gif'
 system(my_command)
 
 
-matplot(counter, type = "o")
+
 
 
 
