@@ -14,17 +14,21 @@ setwd("~/Documents/GitHub/Dissertation/PlantTransTwo")
 
 # Paramters:
 #____________________________________________________________________
+TimeSteps <- 50 # number of time steps
+
 xDim <- 50 # x dimension of matrix
 yDim <- 50 # y dimension of matrix
+
 probHBbirth <- 80 # susceptable honey bee birth rate 
 probBBbirth <- 80 # susceptable bumble bee birth rate
 probHBdeath <- 1 # susceptable honey bee death rate
 probBBdeath <- 1 # susceptable bumble bee death rate
+
 probHBbirthINF <- 80 # infected honey bee birth rate 
 probBBbirthINF <- 80 # infected bumble bee birth rate
 probHBdeathINF <- 1 # infected susceptable honey bee death rate
 probBBdeathINF <- 1 # infected susceptable bumble bee death rate
-TimeSteps <- 50 # number of time steps
+
 #____________________________________________________________________
 
 require(RColorBrewer)
