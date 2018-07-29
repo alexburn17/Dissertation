@@ -214,3 +214,43 @@ system(my_command)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###### SET UP DATA SET AND VARS FOR CALCULATIONS: #######
+MWm2 <- 25.5 # density of plants per 1 meter squared
+plotArea <- 137088 # area of plot in meters squared
+flowersSE <- 300 # number of plants sampled at each time step
+eggCounts <- c(0,0,0,1,1,3,0) # vector of counts of eggs at each of 7 time steps
+
+# calculate total number of flowers at BV:
+flowersInPlot <- MWm2 * plotArea
+
+# calculate the number of estimated eggs in plot for each time step: 
+totalEggsVec <- (eggCounts/flowersSE) * flowersInPlot 
+
+# sum them up for total eggs at BV so far:
+sum(totalEggsVec)
+
+
+
+
