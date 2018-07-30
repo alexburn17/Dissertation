@@ -1,0 +1,659 @@
+FieldID,Site,Date,BombusSpp,Host_Plant,Caste,Notes,1HR_sample,sampling_event
+1,CIND,5/9,imp,dand,queen ,,no,1
+2,CIND,5/9,imp,dand,queen ,,yes,1
+3,CIND,5/9,imp,dand,queen ,,yes,1
+4,CIND,5/9,imp,dand,queen ,,yes,1
+5,CIND,5/9,imp,flying,queen ,,no,1
+6,CIND,5/9,imp,dand,queen ,,yes,1
+7,CIND,5/9,imp,dand,queen ,,yes,1
+8,CIND,5/9,imp,dand,queen ,,yes,1
+9,CIND,5/9,imp,dand,queen ,died in vial,no,1
+10,CIND,5/9,imp,dand,queen ,,yes,1
+11,CIND,5/9,imp,dand,queen ,,yes,1
+12,CIND,5/9,imp,dand,queen ,,yes,1
+13,CIND,5/9,imp,dand,queen ,,no,1
+14,CIND,5/9,imp,dand,queen ,,no,1
+15,CIND,5/9,bimac,dand,queen ,,no,1
+16,CIND,5/9,imp,dand,queen ,,no,1
+17,CIND,5/9,bimac,flying,queen ,,no,1
+18,CIND,5/9,bimac,flying,queen ,,no,1
+19,CIND,5/9,imp,flying,queen ,,no,1
+20,CIND,5/9,bimac,dand,queen ,,no,1
+21,CIND,5/9,imp,dand,queen ,,no,1
+22,CIND,5/9,imp,dand,queen ,,no,1
+23,CIND,5/9,bimac,dand,queen ,,no,1
+24,CIND,5/9,imp,dand,queen ,,no,1
+25,CIND,5/9,bimac,dand,queen ,,no,1
+26,CIND,5/9,imp,dand,queen ,,no,1
+27,CIND,5/9,tern,dand,queen ,,no,1
+28,CIND,5/9,bimac,dand,queen ,,no,1
+29,CIND,5/9,bimac,dand,queen ,,no,1
+30,CIND,5/9,imp,flying,queen ,,no,1
+31,CIND,5/9,imp,flying,queen ,,no,1
+32,CIND,5/9,bimac,dand,queen ,,no,1
+33,CIND,5/9,tern,dand,queen ,,no,1
+34,CIND,5/9,bimac,dand,queen ,,no,1
+1,BOST,5/17,imp,dand,queen ,,yes,1
+2,BOST,5/17,imp,flying,queen ,,yes,1
+3,BOST,5/17,imp,flying,queen ,,yes,1
+4,BOST,5/17,imp,dand,queen ,,yes,1
+5,BOST,5/17,imp,dand,queen ,,yes,1
+6,BOST,5/17,imp,dand,queen ,,yes,1
+7,BOST,5/17,imp,dand,queen ,,yes,1
+8,BOST,5/17,imp,flying,queen ,,yes,1
+9,BOST,5/17,imp,flying,queen ,,yes,1
+10,BOST,5/17,imp,dand,queen ,,yes,1
+11,BOST,5/17,bimac,violet ,queen ,,yes,1
+12,BOST,5/17,imp,flying ,queen ,,no,1
+13,BOST,5/17,imp,flying ,queen ,nest serching ,no,1
+14,BOST,5/17,imp,flying ,queen ,,no,1
+15,BOST,5/17,imp,flying ,queen ,,no,1
+16,BOST,5/17,imp,flying ,queen ,,no,1
+17,BOST,5/17,imp,dand,queen ,,no,1
+18,BOST,5/17,ferv,grass,queen ,,no,1
+19,BOST,5/17,imp,flying,queen ,,no,1
+20,BOST,5/17,imp,flying,queen ,,no,1
+21,BOST,5/17,bimac,flying,queen ,,no,1
+22,BOST,5/17,imp,flying,queen ,,no,1
+23,BOST,5/17,bimac,dand,queen ,,no,1
+24,BOST,5/17,imp,flying,queen ,,no,1
+25,BOST,5/17,imp,flying,queen ,,no,1
+26,BOST,5/17,imp,flying,queen ,,no,1
+27,BOST,5/17,imp,flying,queen ,,no,1
+28,BOST,5/17,bimac,grass,queen ,,no,1
+29,BOST,5/17,tern,dand,queen ,,no,1
+30,BOST,5/17,bimac,flying,queen ,,no,1
+31,BOST,5/17,imp,dand,queen ,,no,1
+32,BOST,5/17,imp,flying,queen ,,no,1
+33,BOST,5/17,tern,dand,queen ,,no,1
+34,BOST,5/17,imp,flying,queen ,,no,1
+35,BOST,5/17,bimac,grass,queen ,,no,1
+36,BOST,5/17,bimac,flying,queen ,,no,1
+37,BOST,5/17,imp,flying,queen ,,no,1
+38,BOST,5/17,imp,flying,queen ,,no,1
+39,BOST,5/17,bimac,flying,queen ,,no,1
+40,BOST,5/17,imp,flying,queen ,,no,1
+41,BOST,5/17,imp,flying,queen ,,no,1
+42,BOST,5/17,bimac,dand,queen ,,no,1
+1,FLAN,5/17,imp,dand,queen ,,yes,1
+2,FLAN,5/17,imp,dand,queen ,,yes,1
+3,FLAN,5/17,imp,dand,queen ,,yes,1
+4,FLAN,5/17,imp,flying,queen ,,yes,1
+5,FLAN,5/17,imp,flying,queen ,,yes,1
+6,FLAN,5/17,vag,dand,queen ,,no,1
+7,FLAN,5/17,bimac,flying,queen ,,no,1
+8,FLAN,5/17,imp,flying,queen ,,no,1
+9,FLAN,5/17,tern,flying,queen ,,no,1
+10,FLAN,5/17,vag,crabapple ,queen ,,no,1
+11,FLAN,5/17,bimac,flying,queen ,,no,1
+12,FLAN,5/17,imp,dand,queen ,,no,1
+13,FLAN,5/17,imp,flying,queen ,,no,1
+14,FLAN,5/17,bimac,violet ,queen ,,no,1
+15,FLAN,5/17,bimac,grass,queen ,,no,1
+16,FLAN,5/17,bimac,grass,queen ,,no,1
+17,FLAN,5/17,imp,mint,queen ,,no,1
+18,FLAN,5/17,imp,violet ,queen ,,no,1
+19,FLAN,5/17,imp,woody yellow ,queen ,,no,1
+20,FLAN,5/17,bimac,violet ,queen ,,no,1
+21,FLAN,5/17,bimac,violet,queen ,,no,1
+22,FLAN,5/17,bimac,violet,queen ,,no,1
+23,FLAN,5/17,imp,flying,queen ,,no,1
+24,FLAN,5/17,bimac,flying,queen ,,no,1
+25,FLAN,5/17,bimac,flying,queen ,,no,1
+1,MUDGE,5/19,tern,wild strawberry,queen ,,no,1
+2,MUDGE,5/19,tern,dand,queen ,,no,1
+3,MUDGE,5/19,imp,flying,queen ,,no,1
+4,MUDGE,5/19,vag,flying,queen ,,no,1
+5,MUDGE,5/19,vag,dand,queen ,,no,1
+6,MUDGE,5/19,tern,dand,queen ,,yes,1
+7,MUDGE,5/19,tern,dand,queen ,,yes,1
+8,MUDGE,5/19,tern,dand,queen ,,no,1
+9,MUDGE,5/19,tern,dand,queen ,,no,1
+10,MUDGE,5/19,tern,dand,queen ,,no,1
+11,MUDGE,5/19,tern,dand,queen ,,no,1
+12,MUDGE,5/19,vag,dand,queen ,,no,1
+13,MUDGE,5/19,vag,dand,queen ,,no,1
+14,MUDGE,5/19,imp,dand,queen ,,no,1
+15,MUDGE,5/19,bimac,dand,queen ,,no,1
+16,MUDGE,5/19,tern,dand,queen ,,no,1
+17,MUDGE,5/19,bimac,dand,queen ,,no,1
+18,MUDGE,5/19,tern,dand,queen ,,no,1
+19,MUDGE,5/19,imp,dand,queen ,,no,1
+20,MUDGE,5/19,bimac,dand,queen ,,no,1
+21,MUDGE,5/19,tern,dand,queen ,,no,1
+22,MUDGE,5/19,bimac,dand,queen ,,no,1
+23,MUDGE,5/19,imp,dand,queen ,,no,1
+24,MUDGE,5/19,perp,dand,queen ,,no,1
+25,MUDGE,5/19,perp,dand,queen ,,no,1
+26,MUDGE,5/19,vag,dand,queen ,,no,1
+27,MUDGE,5/19,tern,dand,queen ,,no,1
+28,MUDGE,5/19,bimac,flying,queen ,,no,1
+29,MUDGE,5/19,imp,dand,queen ,,no,1
+30,MUDGE,5/19,tern,dand,queen ,,no,1
+31,MUDGE,5/19,imp,dand,queen ,,no,1
+32,MUDGE,5/19,perp,dand,queen ,,no,1
+33,MUDGE,5/19,bimac,dand,queen ,,no,1
+34,MUDGE,5/19,imp,dand,queen ,,no,1
+35,MUDGE,5/19,vag,flying,queen ,,no,1
+36,MUDGE,5/19,bimac,dand,queen ,,no,1
+37,MUDGE,5/19,imp,dand,queen ,,no,1
+38,MUDGE,5/19,vag,dand,queen ,,no,1
+39,MUDGE,5/19,bimac,dand,queen ,,no,1
+40,MUDGE,5/19,bimac,dand,queen ,,no,1
+41,MUDGE,5/19,bimac,dand,queen ,,no,1
+42,MUDGE,5/19,bimac,flying,queen ,,no,1
+43,MUDGE,5/19,vag,dand,queen ,,no,1
+44,MUDGE,5/19,bimac,dand,queen ,,no,1
+45,MUDGE,5/19,imp,flying,queen ,,no,1
+46,MUDGE,5/19,imp,flying,queen ,,no,1
+1,COL,5/19,imp,dand,queen ,,no,1
+2,COL,5/19,bimac,flying,queen ,,no,1
+3,COL,5/19,bimac,flying,queen ,,no,1
+4,COL,5/19,tern,dand,queen ,,yes,1
+5,COL,5/19,imp,dand,queen ,,yes,1
+6,COL,5/19,imp,dand,queen ,,yes,1
+7,COL,5/19,imp,dand,queen ,,yes,1
+8,COL,5/19,imp,flying,queen ,,yes,1
+9,COL,5/19,imp,dand,queen ,,yes,1
+10,COL,5/19,vag,dand,queen ,,yes,1
+11,COL,5/19,imp,dand,queen ,,yes,1
+12,COL,5/19,imp,dand,queen ,,no,1
+13,COL,5/19,bimac,flying,queen ,,no,1
+14,COL,5/19,imp,flying,queen ,,no,1
+15,COL,5/19,bimac,flying,queen ,,no,1
+16,COL,5/19,tern,dand,queen ,,yes,1
+17,COL,5/19,bimac,dand,queen ,,yes,1
+18,COL,5/19,bimac,dand,queen ,,yes,1
+19,COL,5/19,bimac,flying ,queen ,,no,1
+20,COL,5/19,imp,flying,queen ,,no,1
+21,COL,5/19,imp,dand,queen ,,yes,1
+22,COL,5/19,bimac ,dand,queen ,,yes,1
+23,COL,5/19,bimac ,dand,queen ,,yes,1
+24,COL,5/19,bimac ,dand,queen ,,no,1
+25,COL,5/19,bimac ,dand,queen ,,no,1
+26,COL,5/19,bimac ,dand,queen ,,no,1
+27,COL,5/19,imp,dand,queen ,,no,1
+28,COL,5/19,imp,dand,queen ,,yes,1
+29,COL,5/19,imp,dand,queen ,,yes,1
+30,COL,5/19,imp,flying,queen ,,yes,1
+31,COL,5/19,imp,flying,queen ,,yes,1
+32,COL,5/19,imp,dand,queen ,,yes,1
+33,COL,5/19,imp,dand,queen ,,yes,1
+34,COL,5/19,imp,dand,queen ,,no,1
+35,COL,5/19,imp,dand,queen ,,no,1
+36,COL,5/19,imp,dand,queen ,,no,1
+37,COL,5/19,imp,dand,queen ,,no,1
+1,MUDGE,7/6,bimac ,CV,worker,,yes,2
+2,MUDGE,7/6,bimac ,CV,worker,,yes,2
+3,MUDGE,7/6,imp,CV,worker,,yes,2
+4,MUDGE,7/6,imp,CV,worker,,yes,2
+5,MUDGE,7/6,imp,CV,worker,,yes,2
+6,MUDGE,7/6,imp,CV,worker,,yes,2
+7,MUDGE,7/6,imp,CV,worker,,yes,2
+8,MUDGE,7/6,imp,CV,worker,,yes,2
+9,MUDGE,7/6,gris,CV,worker,,yes,2
+10,MUDGE,7/6,tern,CV,worker,,yes,2
+11,MUDGE,7/6,imp,CV,worker,,no,2
+12,MUDGE,7/6,gris,CV,worker,,no,2
+13,MUDGE,7/6,gris,CV,worker,,no,2
+14,MUDGE,7/6,vag,CV,worker,,no,2
+15,MUDGE,7/6,bimac ,CV,worker,,no,2
+16,MUDGE,7/6,bimac ,CV,worker,,no,2
+17,MUDGE,7/6,bimac ,CV,worker,,no,2
+18,MUDGE,7/6,bimac ,CV,worker,,no,2
+19,MUDGE,7/6,bimac ,CV,worker,,no,2
+20,MUDGE,7/6,vag,CV,worker,,no,2
+21,MUDGE,7/6,imp ,CV,worker,,no,2
+22,MUDGE,7/6,bimac ,CV,worker,,no,2
+23,MUDGE,7/6,bimac ,CV,worker,,no,2
+24,MUDGE,7/6,bimac ,CV,worker,,no,2
+25,MUDGE,7/6,bimac ,CV,worker,,no,2
+26,MUDGE,7/6,bimac ,CV,worker,,no,2
+27,MUDGE,7/6,bimac ,CV,worker,,no,2
+28,MUDGE,7/6,imp,CV,worker,,no,2
+29,MUDGE,7/6,imp,CV,worker,,no,2
+30,MUDGE,7/6,imp,CV,worker,,no,2
+1,FLAN,7/6,bimac ,CV,worker,,yes,2
+2,FLAN,7/6,bimac ,CV,worker,,yes,2
+3,FLAN,7/6,imp,CV,worker,,yes,2
+4,FLAN,7/6,UNCLEAR,SJW,worker,,yes,2
+5,FLAN,7/6,imp,SJW,worker,,yes,2
+6,FLAN,7/6,imp,SJW,worker,,yes,2
+7,FLAN,7/6,imp,SJW,worker,,yes,2
+8,FLAN,7/6,bimac,SJW,worker,,yes,2
+9,FLAN,7/6,bimac,SJW,worker,,yes,2
+10,FLAN,7/6,imp,SJW,worker,,yes,2
+11,FLAN,7/6,bimac,SJW,worker,,yes,2
+12,FLAN,7/6,imp,SJW,worker,,yes,2
+13,FLAN,7/6,bimac,SJW,worker,,yes,2
+14,FLAN,7/6,imp,SJW,worker,,yes,2
+15,FLAN,7/6,imp,rc,worker,,yes,2
+16,FLAN,7/6,imp,rc,worker,,yes,2
+17,FLAN,7/6,imp,CHICK,worker,,yes,2
+18,FLAN,7/6,imp,CHICK,worker,,yes,2
+19,FLAN,7/6,imp,CHICK,worker,,yes,2
+20,FLAN,7/6,imp,CHICK,worker,,yes,2
+21,FLAN,7/6,bimac,SJW,worker,,yes,2
+22,FLAN,7/6,imp,SJW,worker,,yes,2
+23,FLAN,7/6,imp,SJW,worker,,yes,2
+24,FLAN,7/6,imp,SJW,worker,,yes,2
+25,FLAN,7/6,imp,SJW,worker,,yes,2
+26,FLAN,7/6,bimac,SJW,worker,,yes,2
+27,FLAN,7/6,tern,CV,worker,,yes,2
+28,FLAN,7/6,bimac,CV,worker,,yes,2
+29,FLAN,7/6,bimac,CV,worker,,yes,2
+30,FLAN,7/6,bimac,CV,worker,,yes,2
+31,FLAN,7/6,bimac,CV,worker,,yes,2
+32,FLAN,7/6,bimac,SJW,worker,,yes,2
+33,FLAN,7/6,imp,CV,worker,,yes,2
+34,FLAN,7/6,imp,CV,worker,,yes,2
+35,FLAN,7/6,imp,CV,worker,,yes,2
+36,FLAN,7/6,imp,CV,worker,,yes,2
+37,FLAN,7/6,imp,CV,worker,,yes,2
+38,FLAN,7/6,imp,CV,worker,,yes,2
+39,FLAN,7/6,imp,SJW,worker,,yes,2
+40,FLAN,7/6,imp,SJW,worker,,yes,2
+41,FLAN,7/6,imp,RC,worker,,yes,2
+42,FLAN,7/6,imp,RC,worker,,yes,2
+43,FLAN,7/6,imp,RC,worker,,yes,2
+44,FLAN,7/6,bimac,RC,worker,,yes,2
+45,FLAN,7/6,bimac,RC,worker,,yes,2
+46,FLAN,7/6,bimac,RC,worker,,yes,2
+47,FLAN,7/6,bimac,RC,worker,,yes,2
+48,FLAN,7/6,bimac,RC,worker,,yes,2
+49,FLAN,7/6,bimac,RC,worker,,yes,2
+50,FLAN,7/6,bimac,RC,worker,,yes,2
+51,FLAN,7/6,bimac,WC,worker,,yes,2
+52,FLAN,7/6,bimac,RC,worker,,yes,2
+53,FLAN,7/6,imp,RC,worker,,yes,2
+54,FLAN,7/6,imp,RC,worker,,yes,2
+55,FLAN,7/6,imp,RC,queen,,yes,2
+56,FLAN,7/6,imp,RC,worker,,yes,2
+1,COL,7/6,bor,RC,worker,,yes,2
+2,COL,7/6,tern,RC,worker,,yes,2
+3,COL,7/6,bor,RC,worker,,yes,2
+4,COL,7/6,bor,RC,worker,,yes,2
+5,COL,7/6,bor,RC,worker,,yes,2
+6,COL,7/6,bor,RC,worker,,yes,2
+7,COL,7/6,bor,RC,worker,,yes,2
+8,COL,7/6,imp,RC,worker,,yes,2
+9,COL,7/6,imp,RC,worker,,yes,2
+10,COL,7/6,bimac,RC,worker,,yes,2
+11,COL,7/6,imp,WC,worker,,yes,2
+12,COL,7/6,bor,RC,worker,,yes,2
+13,COL,7/6,bor,RC,worker,,yes,2
+14,COL,7/6,bor,RC,worker,,yes,2
+15,COL,7/6,bor,RC,queen,,yes,2
+16,COL,7/6,vag,RC,worker,,yes,2
+17,COL,7/6,bimac,RC,worker,,no,2
+18,COL,7/6,bor,RC,worker,,no,2
+19,COL,7/6,bimac,RC,worker,,no,2
+20,COL,7/6,bimac,RC,worker,,no,2
+1,BOST,7/7,vag,RC,worker,,yes,2
+2,BOST,7/7,imp,RC,queen,,yes,2
+3,BOST,7/7,imp,RC,queen,,no,2
+4,BOST,7/7,bor,RC,worker,,no,2
+5,BOST,7/7,bor,RC,worker,,yes,2
+6,BOST,7/7,bor,RC,worker,,yes,2
+7,BOST,7/7,bimac ,RC,worker,,yes,2
+8,BOST,7/7,bimac ,RC,worker,,yes,2
+9,BOST,7/7,bimac ,RC,worker,,yes,2
+10,BOST,7/7,imp,RC,worker,,yes,2
+11,BOST,7/7,frey,RC,worker,,yes,2
+12,BOST,7/7,bor,RC,worker,,yes,2
+13,BOST,7/7,imp,RC,queen,,yes,2
+14,BOST,7/7,imp,RC,queen,,yes,2
+15,BOST,7/7,bimac ,RC,worker,,yes,2
+16,BOST,7/7,bimac ,RC,worker,,no,2
+17,BOST,7/7,bimac ,RC,worker,,no,2
+18,BOST,7/7,bor,RC,worker,,yes,2
+19,BOST,7/7,bimac ,RC,worker,,yes,2
+20,BOST,7/7,imp,grass,queen,sick?,yes,2
+21,BOST,7/7,bimac ,RC,worker,,yes,2
+22,BOST,7/7,imp,RC,worker,,yes,2
+23,BOST,7/7,bimac ,RC,worker,,yes,2
+24,BOST,7/7,bimac ,RC,worker,,no,2
+25,BOST,7/7,bimac ,RC,worker,,no,2
+26,BOST,7/7,vag,RC,worker,,no,2
+27,BOST,7/7,vag,RC,worker,,no,2
+28,BOST,7/7,imp,RC,worker,,no,2
+29,BOST,7/7,bimac ,RC,worker,,no,2
+30,BOST,7/7,bimac ,RC,worker,,no,2
+31,BOST,7/7,imp,RC,worker,,no,2
+32,BOST,7/7,vag,RC,worker,,no,2
+33,BOST,7/7,bimac ,RC,worker,,no,2
+34,BOST,7/7,bimac ,RC,worker,,no,2
+35,BOST,7/7,imp,RC,worker,,no,2
+36,BOST,7/7,bimac ,RC,worker,,no,2
+37,BOST,7/7,vag,RC,worker,,no,2
+38,BOST,7/7,imp,RC,worker,,no,2
+39,BOST,7/7,vag,SJW,worker,,no,2
+40,BOST,7/7,bimac ,SJW,worker,,no,2
+41,BOST,7/7,bimac ,RC,worker,,no,2
+42,BOST,7/7,imp,RC,worker,,no,2
+43,BOST,7/7,vag,RC,worker,,no,2
+44,BOST,7/7,imp,RC,worker,,no,2
+45,BOST,7/7,imp,RC,worker,,no,2
+46,BOST,7/7,imp,RC,worker,,no,2
+47,BOST,7/7,bimac,RC,worker,,no,2
+48,BOST,7/7,bimac,RC,worker,,no,2
+49,BOST,7/7,bimac,RC,worker,,no,2
+21,COL,7/7,imp,RC,worker,,no,2
+22,COL,7/7,imp,RC,worker,,no,2
+1,CIND,7/11,bimac,WC,worker,,yes,2
+2,CIND,7/11,bimac,WC,worker,,yes,2
+3,CIND,7/11,bimac,WC,worker,,yes,2
+4,CIND,7/11,bimac,WC,worker,,yes,2
+5,CIND,7/11,bimac,WC,worker,,yes,2
+6,CIND,7/11,bimac,WC,worker,,yes,2
+7,CIND,7/11,bimac,WC,worker,,yes,2
+8,CIND,7/11,bimac,WC,worker,,yes,2
+9,CIND,7/11,bimac,WC,worker,,yes,2
+10,CIND,7/11,tern,WC,worker,,yes,2
+11,CIND,7/11,tern,WC,worker,,yes,2
+12,CIND,7/11,unclear,RC,worker,,no,2
+13,CIND,7/11,imp,RC,worker,,no,2
+14,CIND,7/11,vag,WC,worker,,no,2
+15,CIND,7/11,vag,WC,worker,,no,2
+16,CIND,7/11,bimac,WC,worker,,no,2
+17,CIND,7/11,bimac,WC,worker,,no,2
+1,FLAN,8/3,imp,CV,worker,,yes,3
+2,FLAN,8/3,imp,CV,worker,,yes,3
+3,FLAN,8/3,imp,CV,worker,,yes,3
+4,FLAN,8/3,imp,CV,worker,,yes,3
+5,FLAN,8/3,imp,CV,worker,,yes,3
+6,FLAN,8/3,imp,CV,worker,,yes,3
+7,FLAN,8/3,imp,CV,worker,,yes,3
+8,FLAN,8/3,imp,CV,worker,,yes,3
+9,FLAN,8/3,imp,CV,worker,,yes,3
+10,FLAN,8/3,imp,CV,worker,,yes,3
+11,FLAN,8/3,imp,CV,worker,,yes,3
+12,FLAN,8/3,imp,CV,worker,,yes,3
+13,FLAN,8/3,imp,CV,worker,,yes,3
+14,FLAN,8/3,imp,CV,worker,,yes,3
+15,FLAN,8/3,imp,CV,worker,,yes,3
+16,FLAN,8/3,imp,CV,worker,,yes,3
+17,FLAN,8/3,imp,CV,worker,,yes,3
+18,FLAN,8/3,imp,CV,worker,,yes,3
+19,FLAN,8/3,imp,CV,worker,,yes,3
+20,FLAN,8/3,imp,CV,worker,,yes,3
+21,FLAN,8/3,imp,CV,worker,,yes,3
+22,FLAN,8/3,imp,CV,worker,,yes,3
+23,FLAN,8/3,imp,CV,worker,,yes,3
+24,FLAN,8/3,imp,CV,worker,,yes,3
+25,FLAN,8/3,imp,CV,worker,,yes,3
+26,FLAN,8/3,imp,CV,worker,,yes,3
+27,FLAN,8/3,imp,CV,worker,,yes,3
+28,FLAN,8/3,imp,CV,worker,,yes,3
+29,FLAN,8/3,imp,CV,worker,,yes,3
+30,FLAN,8/3,imp,CV,worker,,yes,3
+31,FLAN,8/3,imp,CV,worker,,yes,3
+32,FLAN,8/3,imp,CV,worker,,yes,3
+33,FLAN,8/3,imp,CV,worker,,yes,3
+34,FLAN,8/3,imp,CV,worker,,yes,3
+35,FLAN,8/3,imp,CV,worker,,yes,3
+36,FLAN,8/3,imp,CV,worker,,yes,3
+37,FLAN,8/3,imp,CV,worker,,yes,3
+38,FLAN,8/3,imp,CV,worker,,yes,3
+39,FLAN,8/3,imp,CV,worker,,yes,3
+40,FLAN,8/3,imp,CV,worker,,yes,3
+1,BOST,8/3,vag,unclear,male,,yes,3
+2,BOST,8/3,bimac,RC,worker,,yes,3
+3,BOST,8/3,bor,vtech,worker,,yes,3
+4,BOST,8/3,imp,RC,worker,,yes,3
+5,BOST,8/3,bor,RC,male,,yes,3
+6,BOST,8/3,imp,RC,worker,,yes,3
+7,BOST,8/3,bor,RC,worker,,yes,3
+8,BOST,8/3,vag,BF,worker,,no,3
+9,BOST,8/3,bimac,RC,worker,,no,3
+10,BOST,8/3,vag,Vtech,worker,,no,3
+11,BOST,8/3,imp,RC,worker,,no,3
+12,BOST,8/3,bimac,RC,male,,no,3
+13,BOST,8/3,imp,RC,worker,,no,3
+14,BOST,8/3,imp,RC,worker,,no,3
+15,BOST,8/3,imp,RC,male,,no,3
+16,BOST,8/3,imp,RC,worker,,no,3
+17,BOST,8/3,imp,KW,male,,no,3
+18,BOST,8/3,imp,RC,worker,,no,3
+19,BOST,8/3,imp,WC,worker,,no,3
+20,BOST,8/3,imp,WC,worker,,no,3
+21,BOST,8/3,imp,WC,worker,,no,3
+22,BOST,8/3,imp,RC,worker,,no,3
+23,BOST,8/3,imp,RC,worker,,no,3
+1,CIND,8/4,imp,WC,worker,,yes,3
+2,CIND,8/4,imp,WC,worker,,yes,3
+3,CIND,8/4,imp,WC,worker,,yes,3
+4,CIND,8/4,imp,WC,worker,,yes,3
+5,CIND,8/4,imp,WC,worker,,yes,3
+6,CIND,8/4,imp,WC,worker,,yes,3
+7,CIND,8/4,imp,WC,worker,,yes,3
+8,CIND,8/4,imp,WC,worker,,yes,3
+9,CIND,8/4,tern,WC,worker,,yes,3
+10,CIND,8/4,tern,WC,worker,,yes,3
+11,CIND,8/4,tern,WC,worker,,yes,3
+12,CIND,8/4,tern,WC,worker,,yes,3
+13,CIND,8/4,imp,WC,worker,,no,3
+14,CIND,8/4,bimac,WC,worker,,no,3
+15,CIND,8/4,imp,WC,worker,,no,3
+16,CIND,8/4,imp,WC,worker,,no,3
+17,CIND,8/4,bimac,WC,worker,,no,3
+18,CIND,8/4,imp,WC,worker,,no,3
+19,CIND,8/4,imp,WC,worker,,no,3
+20,CIND,8/4,vag,WC,worker,,no,3
+21,CIND,8/4,imp,WC,worker,,no,3
+22,CIND,8/4,imp,WC,worker,,no,3
+23,CIND,8/4,imp,WC,worker,,no,3
+1,MUDGE,8/4,vag,SJW,worker,,yes,3
+2,MUDGE,8/4,imp,SJW,worker,,yes,3
+3,MUDGE,8/4,imp,SJW,worker,,yes,3
+4,MUDGE,8/4,imp,CV,worker,,yes,3
+5,MUDGE,8/4,imp,CV,worker,,yes,3
+6,MUDGE,8/4,imp,CV,worker,,yes,3
+7,MUDGE,8/4,imp,CV,worker,,yes,3
+8,MUDGE,8/4,imp,SJW,worker,,yes,3
+9,MUDGE,8/4,imp,SJW,worker,,yes,3
+10,MUDGE,8/4,vag,CV,worker,,yes,3
+11,MUDGE,8/4,tern,CV,worker,,yes,3
+12,MUDGE,8/4,tern,CV,worker,,yes,3
+13,MUDGE,8/4,tern,CV,worker,,yes,3
+14,MUDGE,8/4,tern,JPQ,worker,,yes,3
+15,MUDGE,8/4,tern,SJW,worker,,yes,3
+16,MUDGE,8/4,vag,CV,worker,,yes,3
+17,MUDGE,8/4,vag,CV,worker,,yes,3
+18,MUDGE,8/4,vag,CV,worker,,yes,3
+19,MUDGE,8/4,tern,CV,worker,,yes,3
+20,MUDGE,8/4,tern,CV,worker,,yes,3
+21,MUDGE,8/4,tern,CV,worker,,yes,3
+22,MUDGE,8/4,imp,CV,worker,,yes,3
+23,MUDGE,8/4,imp,CV,worker,,yes,3
+24,MUDGE,8/4,imp,CV,worker,,no,3
+25,MUDGE,8/4,imp,CV,worker,,no,3
+26,MUDGE,8/4,imp,CV,worker,,no,3
+27,MUDGE,8/4,imp,CV,worker,,no,3
+28,MUDGE,8/4,imp,CV,worker,,no,3
+29,MUDGE,8/4,imp,CV,worker,,no,3
+30,MUDGE,8/4,imp,CV,worker,,no,3
+31,MUDGE,8/4,vag,CV,worker,,no,3
+32,MUDGE,8/4,tern,CV,worker,,no,3
+33,MUDGE,8/4,imp,SJW,worker,,no,3
+34,MUDGE,8/4,imp,SJW,worker,,no,3
+35,MUDGE,8/4,imp,SJW,worker,,no,3
+1,COL,8/4,imp,RC,worker,,yes,3
+2,COL,8/4,bimac,RC,worker,,yes,3
+3,COL,8/4,bor,RC,worker,,yes,3
+4,COL,8/4,imp,RC,worker,,yes,3
+5,COL,8/4,imp,RC,worker,,yes,3
+6,COL,8/4,imp,RC,worker,,yes,3
+7,COL,8/4,vag,RC,worker,,yes,3
+8,COL,8/4,bimac,RC,male,,yes,3
+9,COL,8/4,imp,RC,worker,,yes,3
+10,COL,8/4,vag,RC,worker,,yes,3
+11,COL,8/4,imp,Unclear,worker,,yes,3
+12,COL,8/4,vag,RC,worker,,yes,3
+13,COL,8/4,vag,RC,worker,,yes,3
+14,COL,8/4,ferv?,RC,worker,,yes,3
+15,COL,8/4,imp,jewlweed,worker,,no,3
+16,COL,8/4,imp,unlcear ,worker,,no,3
+17,COL,8/4,imp,RC,worker,,no,3
+18,COL,8/4,imp,RC,worker,,no,3
+1,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+2,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+3,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+4,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+5,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+6,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+7,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+8,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+9,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+10,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+11,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+12,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+13,FLAN,9/9,imp,solidago,worker,,unclear where sample ends,4
+14,FLAN,9/9,imp,thistle,worker,,unclear where sample ends,4
+15,FLAN,9/9,imp,solidago,worker,,unclear where sample ends,4
+16,FLAN,9/9,imp,solidago,worker,,unclear where sample ends,4
+17,FLAN,9/9,imp,flight,worker,,unclear where sample ends,4
+18,FLAN,9/9,imp,CV,worker,,unclear where sample ends,4
+19,FLAN,9/9,imp,CV,worker,,unclear where sample ends,4
+20,FLAN,9/9,imp,CV,worker,,unclear where sample ends,4
+21,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+22,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+23,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+24,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+25,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+26,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+27,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+28,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+29,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+30,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+31,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+32,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+33,FLAN,9/9,imp,solidago,worker,,unclear where sample ends,4
+34,FLAN,9/9,imp,solidago,worker,,unclear where sample ends,4
+35,FLAN,9/9,imp,CV,worker,,unclear where sample ends,4
+36,FLAN,9/9,imp,CV,worker,,unclear where sample ends,4
+37,FLAN,9/9,imp,CV,worker,,unclear where sample ends,4
+38,FLAN,9/9,imp,CV,worker,,unclear where sample ends,4
+39,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+40,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+41,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+42,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+43,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+44,FLAN,9/9,imp,JW,worker,,unclear where sample ends,4
+1,BOST,9/9,imp,solidago,worker,,yes,4
+2,BOST,9/9,imp,solidago,male,,yes,4
+3,BOST,9/9,imp,solidago,worker,,yes,4
+4,BOST,9/9,imp,solidago,worker,,yes,4
+5,BOST,9/9,imp,solidago,worker,,yes,4
+6,BOST,9/9,imp,solidago,worker,,yes,4
+7,BOST,9/9,imp,solidago,worker,,yes,4
+8,BOST,9/9,imp,solidago,male,,yes,4
+9,BOST,9/9,imp,solidago,male,,yes,4
+10,BOST,9/9,imp,solidago,male,,yes,4
+11,BOST,9/9,imp,solidago,male,,yes,4
+12,BOST,9/9,imp,solidago,male,,yes,4
+13,BOST,9/9,imp,solidago,male,,yes,4
+14,BOST,9/9,imp,solidago,male,,yes,4
+15,BOST,9/9,imp,solidago,male,,yes,4
+16,BOST,9/9,imp,solidago,worker,,yes,4
+17,BOST,9/9,imp,solidago,worker,,yes,4
+18,BOST,9/9,imp,solidago,worker,,yes,4
+19,BOST,9/9,imp,solidago,worker,,yes,4
+20,BOST,9/9,imp,solidago,worker,,yes,4
+21,BOST,9/9,tern,solidago,male,,yes,4
+22,BOST,9/9,imp,solidago,male,,yes,4
+23,BOST,9/9,imp,solidago,male,,yes,4
+24,BOST,9/9,imp,solidago,male,,yes,4
+25,BOST,9/9,imp,solidago,male,,yes,4
+26,BOST,9/9,imp,solidago,male,,yes,4
+27,BOST,9/9,imp,solidago,male,,yes,4
+28,BOST,9/9,imp,solidago,male,,yes,4
+29,BOST,9/9,vag,solidago,male,,no,4
+1,COL,9/10,imp,RC,worker,,no,4
+2,COL,9/10,imp,RC,worker,,no,4
+3,COL,9/10,imp,RC,worker,,no,4
+4,COL,9/10,imp,RC,worker,,no,4
+5,COL,9/10,imp,RC,worker,,no,4
+6,COL,9/10,imp,RC,worker,,no,4
+7,COL,9/10,imp,RC,worker,,yes,4
+8,COL,9/10,imp,RC,worker,,yes,4
+9,COL,9/10,imp,RC,worker,,yes,4
+10,COL,9/10,imp,RC,worker,,yes,4
+11,COL,9/10,vag,RC,worker,,yes,4
+12,COL,9/10,imp,RC,worker,,yes,4
+13,COL,9/10,imp,RC,worker,,yes,4
+14,COL,9/10,imp,RC,worker,,yes,4
+15,COL,9/10,imp,RC,worker,,yes,4
+16,COL,9/10,imp,RC,worker,,yes,4
+17,COL,9/10,imp,RC,worker,,yes,4
+18,COL,9/10,imp,flight,worker,,yes,4
+19,COL,9/10,imp,RC,worker,,yes,4
+20,COL,9/10,imp,RC,worker,,yes,4
+21,COL,9/10,imp,RC,worker,,yes,4
+22,COL,9/10,imp,RC,worker,,no,4
+23,COL,9/10,imp,RC,worker,,no,4
+24,COL,9/10,imp,RC,worker,,no,4
+25,COL,9/10,imp,RC,worker,,no,4
+26,COL,9/10,imp,RC,worker,,yes,4
+27,COL,9/10,imp,RC,worker,,yes,4
+28,COL,9/10,imp,RC,worker,,yes,4
+29,COL,9/10,imp,RC,worker,,yes,4
+30,COL,9/10,imp,RC,worker,,yes,4
+31,COL,9/10,imp,RC,worker,,yes,4
+32,COL,9/10,imp,RC,worker,,yes,4
+33,COL,9/10,imp,RC,worker,,yes,4
+34,COL,9/10,imp,RC,worker,,yes,4
+35,COL,9/10,imp,RC,worker,,yes,4
+36,COL,9/10,imp,RC,worker,,yes,4
+37,COL,9/10,imp,RC,worker,,yes,4
+38,COL,9/10,imp,RC,worker,,yes,4
+39,COL,9/10,bimac,RC,worker,,no,4
+40,COL,9/10,bor,RC,worker,,no,4
+41,COL,9/10,imp,RC,worker,,no,4
+42,COL,9/10,imp,RC,worker,,no,4
+43,COL,9/10,imp,RC,worker,,no,4
+44,COL,9/10,imp,RC,worker,,no,4
+45,COL,9/10,imp,RC,worker,,no,4
+46,COL,9/10,imp,RC,worker,,no,4
+47,COL,9/10,imp,RC,worker,,no,4
+48,COL,9/10,imp,RC,worker,,no,4
+1,CIND,9/10,imp,KW,worker,died in vial,yes,4
+2,CIND,9/10,tern,RC,worker,"died in vial, threw away",yes,4
+3,CIND,9/10,imp,RC,worker,,yes,4
+4,CIND,9/10,imp,RC,worker,,yes,4
+5,CIND,9/10,imp,RC,worker,,yes,4
+6,CIND,9/10,imp,RC,worker,,yes,4
+7,CIND,9/10,vag,RC,worker,,yes,4
+8,CIND,9/10,vag,RC,queen ,,yes,4
+9,CIND,9/10,vag,RC,worker,,yes,4
+10,CIND,9/10,bor,vtech ,worker,,yes,4
+11,CIND,9/10,imp,birdsfoot,worker,,yes,4
+12,CIND,9/10,imp,RC,worker,,yes,4
+13,CIND,9/10,imp,RC,worker,,no,4
+14,CIND,9/10,imp,KW,worker,,no,4
+15,CIND,9/10,imp,RC,worker,,no,4
+16,CIND,9/10,imp,RC,worker,,no,4
+17,CIND,9/10,imp,RC,worker,,no,4
+18,CIND,9/10,vag,RC,worker,,no,4
+19,CIND,9/10,imp,KW,worker,,no,4
+20,CIND,9/10,imp,RC,worker,,no,4
+21,CIND,9/10,imp,RC,worker,,no,4
+1,MUDGE,9/10,imp,CV,worker,,yes,4
+2,MUDGE,9/10,imp,CV,worker,,yes,4
+3,MUDGE,9/10,imp,CV,worker,,yes,4
+4,MUDGE,9/10,imp,CV,worker,,yes,4
+5,MUDGE,9/10,imp,CV,worker,,yes,4
+6,MUDGE,9/10,imp,CV,worker,,yes,4
+7,MUDGE,9/10,imp,solidago,worker,,no,4
+8,MUDGE,9/10,imp,solidago,worker,,no,4
+9,MUDGE,9/10,imp,solidago,worker,,no,4
+10,MUDGE,9/10,imp,yellow flower need to ID,worker,,no,4
+11,MUDGE,9/10,imp,CV,worker,,yes,4
+12,MUDGE,9/10,vag,CV,worker,,no,4
+13,MUDGE,9/10,imp,CV,worker,,yes,4
+14,MUDGE,9/10,imp,CV,worker,,yes,4
+15,MUDGE,9/10,imp,CV,worker,,no,4
+16,MUDGE,9/10,imp,CV,worker,,no,4
+17,MUDGE,9/10,imp,CV,worker,,no,4
+18,MUDGE,9/10,imp,CV,worker,,no,4
+19,MUDGE,9/10,imp,CV,worker,,no,4
