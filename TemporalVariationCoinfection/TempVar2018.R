@@ -68,6 +68,11 @@ modelDat <- merge(BQCV, DWVtemp, by = "ID")
 mod <- lmer(data=modelDat, formula = logVL ~ binaryDWV * sampling_event + Caste + (1|Site) + (1|Host_Plant))
 Anova(mod)
 
-
+# Summary of BQCV load
+VirusSum <- ddply(modelDat, c("binaryDWV", "sampling_event"), summarise, 
+                   n = length(logVL),
+                   mean = mean(logVL, na.rm=TRUE),
+                   sd = sd(logVL, na.rm = TRUE),
+                   se = sd / sqrt(n))
 
 # family = binomial(link = "logit")
