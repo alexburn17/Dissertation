@@ -22,9 +22,9 @@ yDim <- 50 # y dimension of matrix
 
 probBirth <- 20 # bee birth rate 
 probDeath <- 5 # bee death rate
-probDep <- 25 # probability of depositing virus on flower
+probDep <- 50 # probability of depositing virus on flower
 
-probAquireInfected <- 50
+probAquireInfected <- 100
 probScen <- 5
 probFlow <- 2
 
