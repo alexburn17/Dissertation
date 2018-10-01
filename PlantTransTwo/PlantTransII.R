@@ -189,12 +189,14 @@ plot(dat1$time, log10(dat1$NormGenomeCopy))
 
 
 library(ggplot2)
+library(plyr)
 
 
 
+ggplot(dat1, aes(x=log10(time), y=log10(NormGenomeCopy+1))) + 
+  geom_point(size=3) + theme_minimal(base_size = 17) + labs(x="Foraging Time (seconds)", y = "DWV Load log(genome copies)") 
 
-ggplot(dat1, aes(x=time, y=log10(NormGenomeCopy+1))) + 
-  geom_point(size=3) + theme_minimal(base_size = 17) + labs(x="Foraging Time (seconds)", y = "DWV Load log(genome copies)") + geom_smooth(se = TRUE, method = "gam", formula = y ~ s(log(x)))
+#+ geom_smooth(se = TRUE, method = "gam", formula = y ~ s(log(x)))
   
 
   
