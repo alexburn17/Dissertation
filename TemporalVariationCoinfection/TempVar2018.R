@@ -76,3 +76,5 @@ VirusSum <- ddply(modelDat, c("binaryDWV", "sampling_event"), summarise,
                    se = sd / sqrt(n))
 
 # family = binomial(link = "logit")
+
+plot(VirusSum$sampling_event, VirusSum$mean)
