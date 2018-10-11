@@ -193,8 +193,8 @@ library(plyr)
 
 
 
-ggplot(dat1, aes(x=log10(time), y=log10(NormGenomeCopy+1))) + 
-  geom_point(size=3) + theme_minimal(base_size = 17) + labs(x="Foraging Time log(seconds)", y = "DWV Load log(genome copies)") 
+ggplot(dat1, aes(x=(time), y=log10(NormGenomeCopy+1))) + 
+  geom_point(size=3) + theme_minimal(base_size = 17) + labs(x="Foraging Time (seconds)", y = "DWV Load log(genome copies)") + coord_cartesian(xlim = c(0, 100))
   
 
 plot(dat2$Treatment, log10(dat2$NormGenomeCopy))
