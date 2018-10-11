@@ -15,18 +15,18 @@ setwd("~/Documents/GitHub/Dissertation/PlantTransTwo")
 
 # Paramters:
 #----------------------------------------------------------------------------
-TimeSteps <- 150 # number of time steps
+TimeSteps <- 300 # number of time steps
 
 xDim <- 50 # x dimension of matrix
 yDim <- 50 # y dimension of matrix
 
-probBirth <- 20 # bee birth rate 
-probDeath <- 5 # bee death rate
-probDep <- 50 # probability of depositing virus on flower
+probBirth <- 5 # bee birth rate 
+probDeath <- 3 # bee death rate
+probDep <- 30 # probability of depositing virus on flower
 
-probAquireInfected <- 100
-probScen <- 5
-probFlow <- 2
+probAquireInfected <- 3
+probScen <- 2
+probFlow <- 3
 
 colsBees <- c("white", "yellow", "orange", "pink", "red")
 #----------------------------------------------------------------------------
@@ -35,7 +35,7 @@ colsBees <- c("white", "yellow", "orange", "pink", "red")
 
 
 # initialize random matrix with starting proportions of HB, BB individs:
-beeVec <-sample(0:4, xDim*yDim, replace=T, prob = c(0.7, 0.14, 0.05, 0.1, 0.01))
+beeVec <-sample(0:4, xDim*yDim, replace=T, prob = c(0.74, 0.05, 0.15, 0.1, 0.01))
 beeMat <- matrix(data = beeVec, nrow = yDim, ncol = xDim)
 
 
@@ -159,21 +159,34 @@ dev.off()
 
 
 ResultMat <- cbind(counter[,2:5], counterCols[,6:7])
+x <- as.data.frame(ResultMat)
+names(x) <- c("SHB", "SBB", "IHB", "IBB", "SF", "IF")
+
+x$SHBprev <- x$SHB/(x$SHB+x$IHB)
+x$SBBprev <- x$SBB/(x$SBB+x$IBB)
+x$IHBprev <- x$IHB/(x$SHB+x$IHB)
+x$IBBprev <- x$IBB/(x$SBB+x$IBB)
+x$SFprev <- x$SF/(x$IF+x$SF)
+x$IFprev <- x$IF/(x$IF+x$SF)
+
+ResultMat <- as.matrix(x[,c(7:12)])
 
 colors <- c("purple", "orange", "green", "red", "blue", "black")
 
 matplot(y=ResultMat, type = "l", xlab = "Time",
-        ylab = "Frequency", lwd=3, 
-        col=colors, ylim = c(0, 700), 
+        ylab = "Prevelence", lwd=3, 
+        col=colors, ylim = c(0, 1), 
         lty=1, cex.lab = 1.3)
 
 grid()
 
-legend(0, 700, 
-       legend=c("# S HB", "# S BB", "# I HB" ,"# I BB", "# S Flowers", "# I Flowers"), 
+legend(197, 1.04, 
+       legend=c("S HB", "S BB", "I HB"), 
        col=colors, lty=1, cex=.8)
 
-
+legend(250, 1.04, 
+       legend=c("I BB", "S FL", "I FL"), 
+       col=colors[4:6], lty=1, cex=.8)
 
 
 

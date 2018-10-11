@@ -60,7 +60,7 @@ BQCV <- TempVarCleanSplit$BQCV
 DWV <- TempVarCleanSplit$DWV
 
 # create data set that has binary and log viral loads for each variable 
-DWVtemp <- select(DWV, ID, virusBINY, logVL)
+DWVtemp <- dplyr::select(DWV, ID, virusBINY, logVL)
 names(DWVtemp) <- c("ID", "binaryDWV", "logDWV")
 modelDat <- merge(BQCV, DWVtemp, by = "ID")
 
@@ -78,3 +78,4 @@ VirusSum <- ddply(modelDat, c("binaryDWV", "sampling_event"), summarise,
 # family = binomial(link = "logit")
 
 plot(VirusSum$sampling_event, VirusSum$mean)
+

@@ -194,11 +194,7 @@ library(plyr)
 
 
 ggplot(dat1, aes(x=log10(time), y=log10(NormGenomeCopy+1))) + 
-  geom_point(size=3) + theme_minimal(base_size = 17) + labs(x="Foraging Time (seconds)", y = "DWV Load log(genome copies)") 
-
-#+ geom_smooth(se = TRUE, method = "gam", formula = y ~ s(log(x)))
-  
-
+  geom_point(size=3) + theme_minimal(base_size = 17) + labs(x="Foraging Time log(seconds)", y = "DWV Load log(genome copies)") 
   
 
 plot(dat2$Treatment, log10(dat2$NormGenomeCopy))
@@ -216,11 +212,15 @@ dose <- ddply(dat2, c("Treatment"), summarise,
 dose <- dose[complete.cases(dose),]
 dose$Treatment <- factor(dose$Treatment, levels = c(1,3,5,10))
 
+library("RColorBrewer")
+
+colors <- brewer.pal(n = 5, name = "PuBuGn")
+
 #Create plot in ggplot 
 ggplot(dose, aes(x=Treatment, y=mean, fill=Treatment)) + 
   geom_bar(stat="identity",  
            position=position_dodge()) +
   geom_errorbar(aes(ymin=mean-se, ymax=mean+se), 
                 width=.4,
-                position=position_dodge(.9)) + labs(x= "Dose (copies in milions)", y = "DWV Load log(genome copies)") + theme_classic(base_size = 17) + coord_cartesian(ylim = c(0, 8)) + theme(legend.position="none")
+                position=position_dodge(.9)) + labs(x= "Dose (copies in milions)", y = "DWV Load log(genome copies)") + theme_classic(base_size = 17) + coord_cartesian(ylim = c(0, 8)) + theme(legend.position="none") + scale_fill_manual(values=colors[2:5])
 

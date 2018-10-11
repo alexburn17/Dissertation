@@ -90,7 +90,7 @@ PrelimClean <- function(data=MigVirus){
   
   # take only columns that we want:
   library(dplyr)
-  data <- select(data, ID, Cq_mean, target_name, SampleStatus, Cq_sd, quantity_mean, Quantity.Standard.Deviation, Plate)
+  data <- dplyr::select(data, ID, Cq_mean, target_name, SampleStatus, Cq_sd, quantity_mean, Quantity.Standard.Deviation, Plate)
   
   # remove duplicate rows
   data<-data[!duplicated(data), ]
