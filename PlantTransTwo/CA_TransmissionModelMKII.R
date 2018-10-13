@@ -15,16 +15,17 @@ setwd("~/Documents/GitHub/Dissertation/PlantTransTwo")
 
 # Paramters:
 #----------------------------------------------------------------------------
-TimeSteps <- 300 # number of time steps
+TimeSteps <- 150 # number of time steps
 
 xDim <- 50 # x dimension of matrix
 yDim <- 50 # y dimension of matrix
 
-probBirth <- 5 # bee birth rate 
-probDeath <- 3 # bee death rate
-probDep <- 30 # probability of depositing virus on flower
+probBirth <- 7 # bee birth rate 
+probDeath <- 7 # bee death rate
+probDep <- c(30, 30, 30, 30, 30) # probability of depositing virus on flower
+#probDep <- c(60, 30, 0, 50, 10) # probability of depositing virus on flower
 
-probAquireInfected <- 3
+probAquireInfected <- 30
 probScen <- 2
 probFlow <- 3
 
@@ -97,7 +98,7 @@ for (t in 1:TimeSteps){
         }
         
         # Make the Bees:  
-        if(colMat[i,j]==1 || colMat[i,j]==2 || colMat[i,j]==3 || colMat[i,j]==4){
+        if(colMat[i,j]==1 || colMat[i,j]==2 || colMat[i,j]==3){
           if(runif(1, 1,100)<=probBirth){
             beeMat[i,j] <- colMat[i,j]
           }
@@ -105,7 +106,7 @@ for (t in 1:TimeSteps){
         
         # Honey Bees Deposite Virus on flowers
         if(beeMat[i,j]==3 & colMat[i,j]==5){
-          if(runif(1, 1,100)<=probDep){
+          if(runif(1, 1,100)<=sample(probDep, 1, replace=T, prob = c(1/4, 1/4, 1/4, 1/8, 1/8))){
             colMat[i,j] <- 6
           }
         }
@@ -174,17 +175,17 @@ ResultMat <- as.matrix(x[,c(7:12)])
 colors <- c("purple", "orange", "green", "red", "blue", "black")
 
 matplot(y=ResultMat, type = "l", xlab = "Time",
-        ylab = "Prevelence", lwd=3, 
+        ylab = "Prevalence", lwd=3, 
         col=colors, ylim = c(0, 1), 
         lty=1, cex.lab = 1.3)
 
 grid()
 
-legend(197, 1.04, 
+legend(200, 1.04, 
        legend=c("S HB", "S BB", "I HB"), 
        col=colors, lty=1, cex=.8)
 
-legend(250, 1.04, 
+legend(260, 1.04, 
        legend=c("I BB", "S FL", "I FL"), 
        col=colors[4:6], lty=1, cex=.8)
 
