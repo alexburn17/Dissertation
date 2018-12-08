@@ -15,19 +15,19 @@ setwd("~/Documents/GitHub/Dissertation/PlantTransTwo")
 
 # Paramters:
 #----------------------------------------------------------------------------
-TimeSteps <- 150 # number of time steps
+TimeSteps <- 300 # number of time steps
 
 xDim <- 50 # x dimension of matrix
 yDim <- 50 # y dimension of matrix
 
-probBirth <- 7 # bee birth rate 
-probDeath <- 7 # bee death rate
-probDep <- c(30, 30, 30, 30, 30) # probability of depositing virus on flower
-#probDep <- c(60, 30, 0, 50, 10) # probability of depositing virus on flower
+probBirth <- 6 # bee birth rate 
+probDeath <- 5 # bee death rate
+probDep <- c(22, 22, 22) # probability of depositing virus on flower
+#probDep <- c(60, 30, 0) # probability of depositing virus on flower
 
 probAquireInfected <- 30
-probScen <- 2
-probFlow <- 3
+probScen <- 3
+probFlow <- 4
 
 colsBees <- c("white", "yellow", "orange", "pink", "red")
 #----------------------------------------------------------------------------
@@ -47,17 +47,17 @@ colMat <- matrix(data = colVec, nrow = yDim, ncol = xDim)
 
 # function for creating file name with leading zeros
 # makes it easier to process them sequentially
-rename <- function(x){
-  if (x < 10) {
-    return(name <- paste('000',t,'plot.png',sep=''))
-  }
-  if (x < 100 && i >= 10) {
-    return(name <- paste('00',t,'plot.png', sep=''))
-  }
-  if (x >= 100) {
-    return(name <- paste('0', t,'plot.png', sep=''))
-  }
-}
+#rename <- function(x){
+#  if (x < 10) {
+#    return(name <- paste('000',t,'plot.png',sep=''))
+#  }
+#  if (x < 100 && i >= 10) {
+#    return(name <- paste('00',t,'plot.png', sep=''))
+#  }
+#  if (x >= 100) {
+#    return(name <- paste('0', t,'plot.png', sep=''))
+#  }
+#}
 
 # initialize a matrix to store number of each state in matrix at each time step
 counter <- matrix(nrow=TimeSteps, ncol=5) 
@@ -106,7 +106,7 @@ for (t in 1:TimeSteps){
         
         # Honey Bees Deposite Virus on flowers
         if(beeMat[i,j]==3 & colMat[i,j]==5){
-          if(runif(1, 1,100)<=sample(probDep, 1, replace=T, prob = c(1/4, 1/4, 1/4, 1/8, 1/8))){
+          if(runif(1, 1,100)<=sample(probDep, 1, replace=T, prob = c(1/3, 1/3, 1/3))){
             colMat[i,j] <- 6
           }
         }
@@ -138,21 +138,21 @@ for (t in 1:TimeSteps){
 
   
 # create names for each png:
-name <- rename(t)
-png(name)
+#name <- rename(t)
+#png(name)
  
 # create each image to visulaize as a matrix 
-image(1:nrow(beeMat), 1:ncol(beeMat), as.matrix(beeMat), col=colsBees, asp=1, xaxt='n', yaxt='n', ann=FALSE, bty='n')
+#image(1:nrow(beeMat), 1:ncol(beeMat), as.matrix(beeMat), col=colsBees, asp=1, xaxt='n', yaxt='n', ann=FALSE, bty='n')
 
-dev.off()
+#dev.off()
 
 } # end of time step for loop
 
 #run ImageMagick: creates a gif of all images
-my_command <- 'convert *.png -delay 3 -loop 0 animation.gif'
-system(my_command)
+#my_command <- 'convert *.png -delay 3 -loop 0 animation.gif'
+#system(my_command)
 
-dev.off()
+#dev.off()
 
 
 
@@ -163,16 +163,16 @@ ResultMat <- cbind(counter[,2:5], counterCols[,6:7])
 x <- as.data.frame(ResultMat)
 names(x) <- c("SHB", "SBB", "IHB", "IBB", "SF", "IF")
 
-x$SHBprev <- x$SHB/(x$SHB+x$IHB)
-x$SBBprev <- x$SBB/(x$SBB+x$IBB)
+#x$SHBprev <- x$SHB/(x$SHB+x$IHB)
+#x$SBBprev <- x$SBB/(x$SBB+x$IBB)
 x$IHBprev <- x$IHB/(x$SHB+x$IHB)
 x$IBBprev <- x$IBB/(x$SBB+x$IBB)
-x$SFprev <- x$SF/(x$IF+x$SF)
+#x$SFprev <- x$SF/(x$IF+x$SF)
 x$IFprev <- x$IF/(x$IF+x$SF)
 
-ResultMat <- as.matrix(x[,c(7:12)])
+ResultMat <- as.matrix(x[,c(7,8,9)])
 
-colors <- c("purple", "orange", "green", "red", "blue", "black")
+colors <- c("green", "red", "blue")
 
 matplot(y=ResultMat, type = "l", xlab = "Time",
         ylab = "Prevalence", lwd=3, 
@@ -181,13 +181,10 @@ matplot(y=ResultMat, type = "l", xlab = "Time",
 
 grid()
 
-legend(200, 1.04, 
-       legend=c("S HB", "S BB", "I HB"), 
+legend(230, 1, 
+       legend=c("Infected HB", "Infected BB", "Infected FL"), 
        col=colors, lty=1, cex=.8)
 
-legend(260, 1.04, 
-       legend=c("I BB", "S FL", "I FL"), 
-       col=colors[4:6], lty=1, cex=.8)
 
 
 
